@@ -7,17 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Thu, 19 May 2016 01:26:13 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
-      <link>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</link>
-      <pubDate>Thu, 19 May 2016 01:26:13 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Deep Learning</title>
@@ -107,6 +98,15 @@ Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 an
 
 &lt;p&gt;My current research focuses on stream processing and analytics based on deep learning for the biometric data.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
+      <link>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</link>
+      <pubDate>Fri, 15 Jan 2016 01:26:13 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</guid>
+      <description></description>
     </item>
     
     <item>
