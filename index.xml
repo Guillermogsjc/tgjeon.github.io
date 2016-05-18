@@ -7,8 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 May 2016 01:26:13 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
+      <link>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</link>
+      <pubDate>Thu, 19 May 2016 01:26:13 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Deep Learning</title>
@@ -91,12 +100,12 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
 
-&lt;p&gt;PhD candidate in Electrical Engineering and Computer Science at Gwangju Institute of Science and Technology. I received M.S. degree under supervision of Prof. Moongu Jeon.&lt;/p&gt;
+&lt;p&gt;Taegyun Jeon is a PhD candidate in Electrical Engineering and Computer Science at Gwangju Institute of Science and Technology. Also, I received M.S. degree under supervision of Prof. Moongu Jeon.&lt;/p&gt;
 
 &lt;p&gt;As research scientist, my focus has been on identifying technologies that futher healthcare based on machine learning. I have spent the last 7 years for diagnosing cardiac diseases (Atrial Fibrillation, Myocardial Infaction, Ventricular Tachycardia, and Ventricular Fibrillation) and robust heartbeat detection from multimodal physiological signals (ECG, EEG, BP, EMG, and Respiration).
 Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 and implemented device driver and numerical programming for real-time ECG processing and analysis.&lt;/p&gt;
 
-&lt;p&gt;My current research focuses on stream processing and analytics for the hugh biometric time-series data using Deep Networks.&lt;/p&gt;
+&lt;p&gt;My current research focuses on stream processing and analytics based on deep learning for the biometric data.&lt;/p&gt;
 </description>
     </item>
     
