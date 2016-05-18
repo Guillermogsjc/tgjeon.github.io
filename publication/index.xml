@@ -7,8 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Fri, 15 Jan 2016 01:26:13 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 May 2016 01:43:07 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Implementation of portable device for real-time ECG signal analysis</title>
+      <link>https://tgjeon.github.io/publication/implementation_of_portable_device/</link>
+      <pubDate>Thu, 19 May 2016 01:43:07 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/implementation_of_portable_device/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
