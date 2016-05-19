@@ -92,6 +92,15 @@
     </item>
     
     <item>
+      <title>Bio-Inspired Computing: Design and Applications</title>
+      <link>https://tgjeon.github.io/publication/master_thesis/</link>
+      <pubDate>Thu, 19 Feb 2009 10:06:15 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/master_thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Fast Scale-Invariant Feature Transform using Niching Particle Swarm Optimization</title>
       <link>https://tgjeon.github.io/publication/fast_scale_invariant_feature_transform/</link>
       <pubDate>Tue, 17 Feb 2009 09:45:53 +0900</pubDate>
@@ -133,15 +142,6 @@
       <pubDate>Wed, 20 Feb 2008 09:52:31 +0900</pubDate>
       
       <guid>https://tgjeon.github.io/publication/efficient_image_segmentation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Sentimental Classification System using Feature Extraction from Seed Word and Support Vector Machine</title>
-      <link>https://tgjeon.github.io/publication/sentimental_classification_system/</link>
-      <pubDate>Mon, 05 Feb 2007 10:01:59 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/sentimental_classification_system/</guid>
       <description></description>
     </item>
     
