@@ -228,23 +228,30 @@ Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 an
     </item>
     
     <item>
-      <title>teaching</title>
-      <link>https://tgjeon.github.io/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Developing Detection Algorithms of Heart Diseases and Portable ECG</title>
+      <link>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</link>
+      <pubDate>Thu, 24 Jan 2013 09:31:37 +0900</pubDate>
       
-      <guid>https://tgjeon.github.io/home/teaching/</guid>
-      <description>&lt;p&gt;I am a teaching instructor for the following courses at University X:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;CS101: An intro to computer science&lt;/li&gt;
-&lt;li&gt;CS102: An intro to computer science&lt;/li&gt;
-&lt;li&gt;CS103: An intro to computer science&lt;/li&gt;
-&lt;li&gt;CS104: An intro to computer science&lt;/li&gt;
-&lt;li&gt;CS105: An intro to computer science&lt;/li&gt;
-&lt;li&gt;CS106: An intro to computer science&lt;/li&gt;
-&lt;li&gt;CS107: An intro to computer science&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Region based Scene Segmentation method for Topography Analysis</title>
+      <link>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</link>
+      <pubDate>Thu, 22 Nov 2012 09:37:32 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Framework for Generating Obstacle Feature Map Using UAV Imaging</title>
+      <link>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</link>
+      <pubDate>Fri, 18 Jun 2010 09:40:45 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</guid>
+      <description></description>
     </item>
     
   </channel>
