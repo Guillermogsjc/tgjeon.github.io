@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Taegyun Jeon</title>
-    <link>tgjeon.github.io/</link>
+    <link>https://tgjeon.github.io/</link>
     <description>Recent content on Taegyun Jeon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
     <lastBuildDate>Thu, 19 May 2016 13:58:31 +0900</lastBuildDate>
-    <atom:link href="tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
-      <link>/tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
+      <link>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
       <pubDate>Thu, 19 May 2016 13:58:31 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
+      <guid>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2014 - Dec 2015&lt;/p&gt;
@@ -40,10 +40,10 @@
     
     <item>
       <title>Living Energy: distributed-intelligence management and operation for smart energy</title>
-      <link>/tgjeon.github.io/project/living_energy/</link>
+      <link>https://tgjeon.github.io/project/living_energy/</link>
       <pubDate>Thu, 19 May 2016 10:54:56 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/project/living_energy/</guid>
+      <guid>https://tgjeon.github.io/project/living_energy/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2016 - Dec 2017&lt;/p&gt;
@@ -68,11 +68,11 @@
     
     <item>
       <title>Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
-      <link>/tgjeon.github.io/project/cnn_for_mnist/</link>
+      <link>https://tgjeon.github.io/project/cnn_for_mnist/</link>
       <pubDate>Wed, 04 May 2016 10:29:55 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/project/cnn_for_mnist/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
+      <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Individual project&lt;/p&gt;
 
@@ -93,10 +93,10 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
     
     <item>
       <title>Deep Learning in a Nutshell: Core Concepts</title>
-      <link>/tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</link>
+      <link>https://tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</link>
       <pubDate>Sat, 23 Apr 2016 16:58:51 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</guid>
+      <guid>https://tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -166,10 +166,10 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
     
     <item>
       <title>about</title>
-      <link>/tgjeon.github.io/home/about/</link>
+      <link>https://tgjeon.github.io/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tgjeon.github.io/home/about/</guid>
+      <guid>https://tgjeon.github.io/home/about/</guid>
       <description>
 
 &lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
@@ -183,91 +183,91 @@ Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 an
     
     <item>
       <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
-      <link>/tgjeon.github.io/publication/robust_detection_of_heartbeats/</link>
+      <link>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</link>
       <pubDate>Fri, 15 Jan 2016 01:26:13 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/robust_detection_of_heartbeats/</guid>
+      <guid>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Iterative Feature Selection Method for Shock Advice Algorithm with Artifact-Free ECG</title>
-      <link>/tgjeon.github.io/publication/iterative_feature_selection/</link>
+      <link>https://tgjeon.github.io/publication/iterative_feature_selection/</link>
       <pubDate>Wed, 16 Dec 2015 01:52:27 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/iterative_feature_selection/</guid>
+      <guid>https://tgjeon.github.io/publication/iterative_feature_selection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Implementation of portable device for real-time ECG signal analysis</title>
-      <link>/tgjeon.github.io/publication/implementation_of_portable_device/</link>
+      <link>https://tgjeon.github.io/publication/implementation_of_portable_device/</link>
       <pubDate>Wed, 10 Dec 2014 01:43:07 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/implementation_of_portable_device/</guid>
+      <guid>https://tgjeon.github.io/publication/implementation_of_portable_device/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Heart beat detection method with estimation of regular intervals between ECG and blood pressure</title>
-      <link>/tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/</link>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/</link>
       <pubDate>Sun, 07 Sep 2014 09:15:02 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/</guid>
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Heart Beat Detection Method using Estimated Regular Intervals from ECG and Blood Pressure</title>
-      <link>/tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</link>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</link>
       <pubDate>Sun, 22 Jun 2014 09:21:50 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</guid>
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Heart Beat Detection Method using Heterogeneous Physiological Signal Analysis</title>
-      <link>/tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</link>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</link>
       <pubDate>Wed, 12 Mar 2014 09:24:54 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</guid>
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Developing Detection Algorithms of Heart Diseases and Portable ECG</title>
-      <link>/tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</link>
+      <link>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</link>
       <pubDate>Thu, 24 Jan 2013 09:31:37 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</guid>
+      <guid>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Region based Scene Segmentation method for Topography Analysis</title>
-      <link>/tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</link>
+      <link>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</link>
       <pubDate>Thu, 22 Nov 2012 09:37:32 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</guid>
+      <guid>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Framework for Generating Obstacle Feature Map Using UAV Imaging</title>
-      <link>/tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</link>
+      <link>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</link>
       <pubDate>Fri, 18 Jun 2010 09:40:45 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</guid>
+      <guid>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bio-Inspired Computing: Design and Applications</title>
-      <link>/tgjeon.github.io/publication/master_thesis/</link>
+      <link>https://tgjeon.github.io/publication/master_thesis/</link>
       <pubDate>Thu, 19 Feb 2009 10:06:15 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/publication/master_thesis/</guid>
+      <guid>https://tgjeon.github.io/publication/master_thesis/</guid>
       <description></description>
     </item>
     

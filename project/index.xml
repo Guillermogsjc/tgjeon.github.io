@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Taegyun Jeon</title>
-    <link>tgjeon.github.io/project/</link>
+    <link>https://tgjeon.github.io/project/</link>
     <description>Recent content in Projects on Taegyun Jeon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
     <lastBuildDate>Thu, 19 May 2016 13:58:31 +0900</lastBuildDate>
-    <atom:link href="tgjeon.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tgjeon.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
-      <link>/tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
+      <link>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
       <pubDate>Thu, 19 May 2016 13:58:31 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
+      <guid>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2014 - Dec 2015&lt;/p&gt;
@@ -40,10 +40,10 @@
     
     <item>
       <title>Living Energy: distributed-intelligence management and operation for smart energy</title>
-      <link>/tgjeon.github.io/project/living_energy/</link>
+      <link>https://tgjeon.github.io/project/living_energy/</link>
       <pubDate>Thu, 19 May 2016 10:54:56 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/project/living_energy/</guid>
+      <guid>https://tgjeon.github.io/project/living_energy/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2016 - Dec 2017&lt;/p&gt;
@@ -68,11 +68,11 @@
     
     <item>
       <title>Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
-      <link>/tgjeon.github.io/project/cnn_for_mnist/</link>
+      <link>https://tgjeon.github.io/project/cnn_for_mnist/</link>
       <pubDate>Wed, 04 May 2016 10:29:55 +0900</pubDate>
       
-      <guid>/tgjeon.github.io/project/cnn_for_mnist/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
+      <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Individual project&lt;/p&gt;
 
