@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deep Learning on Taegyun Jeon</title>
-    <link>https://tgjeon.github.io/tags/deep-learning/</link>
+    <link>tgjeon.github.io/tags/deep-learning/</link>
     <description>Recent content in Deep Learning on Taegyun Jeon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
     <lastBuildDate>Wed, 04 May 2016 10:29:55 +0900</lastBuildDate>
-    <atom:link href="https://tgjeon.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="tgjeon.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
-      <link>https://tgjeon.github.io/project/cnn_for_mnist/</link>
+      <link>/tgjeon.github.io/project/cnn_for_mnist/</link>
       <pubDate>Wed, 04 May 2016 10:29:55 +0900</pubDate>
       
-      <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
+      <guid>/tgjeon.github.io/project/cnn_for_mnist/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Individual project&lt;/p&gt;
 
@@ -37,10 +37,10 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
     
     <item>
       <title>Deep Learning in a Nutshell: Core Concepts</title>
-      <link>https://tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</link>
+      <link>/tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</link>
       <pubDate>Sat, 23 Apr 2016 16:58:51 +0900</pubDate>
       
-      <guid>https://tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</guid>
+      <guid>/tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/</guid>
       <description>
 
 &lt;blockquote&gt;
