@@ -192,16 +192,6 @@ Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 an
     </item>
     
     <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>https://tgjeon.github.io/publication/person-re-identification/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/person-re-identification/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Implementation of portable device for real-time ECG signal analysis</title>
       <link>https://tgjeon.github.io/publication/implementation_of_portable_device/</link>
       <pubDate>Wed, 10 Dec 2014 01:43:07 +0900</pubDate>
@@ -220,13 +210,21 @@ Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 an
     </item>
     
     <item>
-      <title>Mobile visual clothing search</title>
-      <link>https://tgjeon.github.io/publication/clothing-search/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <title>Heart Beat Detection Method using Estimated Regular Intervals from ECG and Blood Pressure</title>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</link>
+      <pubDate>Sun, 22 Jun 2014 09:21:50 +0900</pubDate>
       
-      <guid>https://tgjeon.github.io/publication/clothing-search/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heart Beat Detection Method using Heterogeneous Physiological Signal Analysis</title>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</link>
+      <pubDate>Wed, 12 Mar 2014 09:24:54 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</guid>
+      <description></description>
     </item>
     
     <item>
