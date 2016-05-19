@@ -19,9 +19,9 @@
 
 
     <link rel="shortcut icon" href="https://tgjeon.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://tgjeon.github.io/publication/implementation_of_portable_device/">
+    <link rel="canonical" href="https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/">
 
-    <title>Implementation of portable device for real-time ECG signal analysis | Taegyun Jeon</title>
+    <title>Heart beat detection method with estimation of regular intervals between ECG and blood pressure | Taegyun Jeon</title>
 
 </head>
 <body id="top">
@@ -69,35 +69,35 @@
 
     <div id="pub">
         <div class="pub-title">
-            <h1>Implementation of portable device for real-time ECG signal analysis</h1>
+            <h1>Heart beat detection method with estimation of regular intervals between ECG and blood pressure</h1>
             <span class="citation_authors">
                 
-                Taegyun Jeon, Byoungho Kim, Moongu Jeon, Byung-Geun Lee
+                Jongmin Yu, Taegyun Jeon, Moongu Jeon
                 
             </span>
             <span class="pull-right">
                 
 <ul class="share">
     <li>
-        <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ftgjeon.github.io%2fpublication%2fimplementation_of_portable_device%2f" target="_blank">
+        <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ftgjeon.github.io%2fpublication%2fheartbeat_detection_method_with_estimation_of_regular_intervals%2f" target="_blank">
             <i class="fa fa-facebook-square"></i>
             <span class="hidden">Facebook</span>
         </a>
     </li>
     <li>
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=Implementation%20of%20portable%20device%20for%20real-time%20ECG%20signal%20analysis&amp;url=https%3a%2f%2ftgjeon.github.io%2fpublication%2fimplementation_of_portable_device%2f" target="_blank">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=Heart%20beat%20detection%20method%20with%20estimation%20of%20regular%20intervals%20between%20ECG%20and%20blood%20pressure&amp;url=https%3a%2f%2ftgjeon.github.io%2fpublication%2fheartbeat_detection_method_with_estimation_of_regular_intervals%2f" target="_blank">
             <i class="fa fa-twitter-square"></i>
             <span class="hidden">Twitter</span>
         </a>
     </li>
     <li>
-        <a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftgjeon.github.io%2fpublication%2fimplementation_of_portable_device%2f&amp;title=Implementation%20of%20portable%20device%20for%20real-time%20ECG%20signal%20analysis" target="_blank">
+        <a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftgjeon.github.io%2fpublication%2fheartbeat_detection_method_with_estimation_of_regular_intervals%2f&amp;title=Heart%20beat%20detection%20method%20with%20estimation%20of%20regular%20intervals%20between%20ECG%20and%20blood%20pressure" target="_blank">
             <i class="fa fa-linkedin-square"></i>
             <span class="hidden">LinkedIn</span>
         </a>
     </li>
     <li>
-        <a class="email" href="mailto:?subject=Implementation%20of%20portable%20device%20for%20real-time%20ECG%20signal%20analysis&amp;body=https%3a%2f%2ftgjeon.github.io%2fpublication%2fimplementation_of_portable_device%2f">
+        <a class="email" href="mailto:?subject=Heart%20beat%20detection%20method%20with%20estimation%20of%20regular%20intervals%20between%20ECG%20and%20blood%20pressure&amp;body=https%3a%2f%2ftgjeon.github.io%2fpublication%2fheartbeat_detection_method_with_estimation_of_regular_intervals%2f">
             <i class="fa fa-envelope-square"></i>
             <span class="hidden">Email</span>
         </a>
@@ -109,14 +109,14 @@
         </div>
 
         <h3>Abstract</h3>
-        <p>Background: Cardiac disease is one of the main causes of catastrophic mortality. Therefore, detecting the symptoms of cardiac disease as early as possible is important for increasing the patient’s survival. In this study, a compact and effective architecture for detecting atrial fibrillation (AFib) and myocardial ischemia is proposed. We developed a portable device using this architecture, which allows real-time electrocardiogram (ECG) signal acquisition and analysis for cardiac diseases. Methods: A noisy ECG signal was preprocessed by an analog front-end consisting of analog filters and amplifiers before it was converted into digital data. The analog front-end was minimized to reduce the size of the device and power consumption by implementing some of its functions with digital filters realized in software. With the ECG data, we detected QRS complexes based on wavelet analysis and feature extraction for morphological shape and regularity using an ARM processor. A classifier for cardiac disease was constructed based on features extracted from a training dataset using support vector machines. The classifier then categorized the ECG data into normal beats, AFib, and myocardial ischemia. Results: A portable ECG device was implemented, and successfully acquired and processed ECG signals. The performance of this device was also verified by comparing the processed ECG data with high-quality ECG data from a public cardiac database. Because of reduced computational complexity, the ARM processor was able to process up to a thousand samples per second, and this allowed real-time acquisition and diagnosis of heart disease. Experimental results for detection of heart disease showed that the device classified AFib and ischemia with a sensitivity of 95.1% and a specificity of 95.9%. Conclusions: Current home care and telemedicine systems have a separate device and diagnostic service system, which results in additional time and cost. Our proposed portable ECG device provides captured ECG data and suspected waveform to identify sporadic and chronic events of heart diseases. This device has been built and evaluated for high quality of signals, low computational complexity, and accurate detection.</p>
+        <p>Heart beat is a fundamental cardiac activity which is easily found with various measurements. In the worst case, unexpected noise or contaminated signals can affect ECG signal in the practical conditions, then, we hardly find the heart beat for a while. To deal with these problems, PhysioNet/CinC suggests a challenge for developing robust heart beat detection method with multimodal data. In this paper, we proposed two models which process EEG and a pair of ECG and BP signals to compensate the limitation of QRS detection. At first, we extract candidates of heart beat using QRS detector. As supplementation, we estimated regular interval between ECG and BP signal. When we miss heart beats on ECG, we can estimate the locations of heart beat using detected characteristic BP signal and regular interval. At last, we decomposed EEG signal which contains ECG signal as cardiac artefact. Adaptive filtering model in cascade was proposed for this purpose. We utilized the model to identify the locations where the cardiac artifacts are occurred on EEG signal. Then, voting module generated the suggested locations of candidate heart beats. Our proposed method achieved the overall score with 82.01% at phase 111.</p>
 
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3" style="font-weight: bold">Publication</div>
-                    <div class="col-xs-12 col-sm-9">In <em>Biomedical Engineering Online (BME)</em></div>
+                    <div class="col-xs-12 col-sm-9">In <em>International Conference on Computing in Cardiology (CinC)</em></div>
                 </div>
             </div>
             <div class="col-sm-1"></div>
@@ -128,7 +128,7 @@
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-xs-12 col-sm-3" style="font-weight: bold">Date</div>
-                    <div class="col-xs-12 col-sm-9">December, 2014</div>
+                    <div class="col-xs-12 col-sm-9">September, 2014</div>
                 </div>
             </div>
             <div class="col-sm-1"></div>
@@ -147,15 +147,15 @@
 
 
 
-<a class="btn btn-primary btn-outline" href="http://biomedical-engineering-online.biomedcentral.com/track/pdf/10.1186/1475-925X-13-160?site=biomedical-engineering-online.biomedcentral.com">PDF</a>
 
 
 
 
+<a class="btn btn-primary btn-outline" href="http://physionet.org/physiobank/database/challenge/2014/">Dataset</a>
 
 
 
-<a class="btn btn-primary btn-outline" href="http://biomedical-engineering-online.biomedcentral.com/articles/10.1186/1475-925X-13-160"> Link</a>
+<a class="btn btn-primary btn-outline" href="https://www.scopus.com/record/display.uri?eid=2-s2.0-84931437006&amp;origin=resultslist&amp;sort=plf-f&amp;src=s&amp;sid=134386B542768B1813BBD24D55338E98.Vdktg6RVtMfaQJ4pNTCQ%3a250&amp;sot=autdocs&amp;sdt=autdocs&amp;sl=18&amp;s=AU-ID%2835318029600%29&amp;relpos=2&amp;citeCnt=1&amp;searchTerm="> Link</a>
 
 
 
@@ -175,11 +175,11 @@
     <nav>
     <ul class="pager">
         
-        <li class="previous"><a href="https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/"><span aria-hidden="true">&larr;</span> Heart beat detection method with estimation of regular intervals between ECG and blood pressure</a></li>
+        <li class="previous"><a href="https://tgjeon.github.io/publication/clothing-search/"><span aria-hidden="true">&larr;</span> Mobile visual clothing search</a></li>
         
 
         
-        <li class="next"><a href="https://tgjeon.github.io/publication/person-re-identification/">A Person Re-Identification System For Mobile Devices <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="https://tgjeon.github.io/publication/implementation_of_portable_device/">Implementation of portable device for real-time ECG signal analysis <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>
