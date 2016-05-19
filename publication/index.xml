@@ -91,5 +91,59 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Fast Scale-Invariant Feature Transform using Niching Particle Swarm Optimization</title>
+      <link>https://tgjeon.github.io/publication/fast_scale_invariant_feature_transform/</link>
+      <pubDate>Tue, 17 Feb 2009 09:45:53 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/fast_scale_invariant_feature_transform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A New GA-based Data Fusion Methodology for Detecting Harmful Algal Blooms</title>
+      <link>https://tgjeon.github.io/publication/ga_based_data_fusion/</link>
+      <pubDate>Mon, 08 Dec 2008 09:49:02 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/ga_based_data_fusion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A study on the development of integrated software for testing SMIA camera module systems</title>
+      <link>https://tgjeon.github.io/publication/development_of_smia_testing/</link>
+      <pubDate>Wed, 02 Jul 2008 09:55:25 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/development_of_smia_testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Probability Model based Multicast Routing Algorithm with Multi-QoS Constraints</title>
+      <link>https://tgjeon.github.io/publication/probability_model_based_multicasting_routing/</link>
+      <pubDate>Fri, 30 May 2008 09:58:20 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/probability_model_based_multicasting_routing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Efficient Image Segmentation Method in Multi-Core Processor Environments</title>
+      <link>https://tgjeon.github.io/publication/efficient_image_segmentation/</link>
+      <pubDate>Wed, 20 Feb 2008 09:52:31 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/efficient_image_segmentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Sentimental Classification System using Feature Extraction from Seed Word and Support Vector Machine</title>
+      <link>https://tgjeon.github.io/publication/sentimental_classification_system/</link>
+      <pubDate>Mon, 05 Feb 2007 10:01:59 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/sentimental_classification_system/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
