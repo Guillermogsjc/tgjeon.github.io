@@ -121,9 +121,9 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
 
 &lt;p&gt;특징 공학은 대부분의 예측 분야에서 좋은 성능을 얻기위해 요구되는 가장 중요한 기술이다. 하지만, 다른 데이터 셋과 다른 종류의 데이터들은 각자 다른 특징 공학 기법이 필요하기에, 최고의 특징 공학 기술을 습득하고 마스터하기엔 어렵다. 특징 공학은 과학이라기 보다 예술의 경지에 가깝다. 특정 데이터 셋에서 추출된 특징은 종종 다른 데이터 셋에서는 적용되지 않는다. (위 예제에서 계속하여, 다음 사진이 오직 육지 동물만 포함하는 경우). 특징 공학이 어렵다는 점과 많은 노력이 요구되는 점이 &lt;strong&gt;자동으로 특징을 학습할 수 있는 알고리즘&lt;/strong&gt;을 찾게 되는 가장 큰 이유이다.&lt;/p&gt;
 
-&lt;p&gt;물체 인식이나 음성 인식과 같은 분야의 영역이 특징 학습을 통해 자동화되고 있지만, 특징 공학은 &lt;a href=&#34;https://blog.kaggle.com/2014/08/01/learning-from-the-best/&#34;&gt;kaggle 기계 학습 대회의 어려운 여러 분야에서 가장 효율적인 방법&lt;/a&gt;으로  여전히 지속 될 것이다.&lt;/p&gt;
+&lt;p&gt;물체 인식이나 음성 인식과 같은 분야의 영역이 특징 학습을 통해 자동화되고 있지만, 특징 공학은 &lt;a href=&#34;http://blog.kaggle.com/2014/08/01/learning-from-the-best/&#34;&gt;kaggle 기계 학습 대회의 어려운 여러 분야에서 가장 효율적인 방법&lt;/a&gt;으로  여전히 지속 될 것이다.&lt;/p&gt;
 
-&lt;h4 id=&#34;feature-learning-특징-학습:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Feature Learning (특징 학습)&lt;/h4&gt;
+&lt;h3 id=&#34;feature-learning-특징-학습:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Feature Learning (특징 학습)&lt;/h3&gt;
 
 &lt;p&gt;특징 학습 알고리즘은 서로 다른 범주(클래스)의 분류를 위한 가장 중요하며, 공통적으로 나타나는 패턴을 찾는다. 그리고 특징을 자동으로 추출하여 분류나 회귀 문제에 적용된다. 특징 학습은 특징 공학처럼 알고리즘을 통해 자동으로 수행되는 것 처럼 생각된다. 딥러닝에서는 convolutional layer가 예외적으로 이미지에서 좋은 특징을 찾는데 탁월한 능력을 보인다.&lt;/p&gt;
 
@@ -176,7 +176,7 @@ Figure 1: 딥 러닝 알고리즘으로 부터 학습된 계층형 특징들.&lt
 
 &lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
 
-&lt;p&gt;As research scientist, my focus has been on identifying technologies that futher healthcare based on machine learning. I have spent the last 7 years for diagnosing cardiac diseases (Atrial Fibrillation, Myocardial Infaction, Ventricular Tachycardia, and Ventricular Fibrillation) and robust heartbeat detection from multimodal physiological signals (ECG, EEG, BP, EMG, and Respiration).
+&lt;p&gt;As research scientist, my focus has been on identifying technologies that further healthcare based on machine learning. I have spent the last 7 years for diagnosing cardiac diseases (Atrial Fibrillation, Myocardial Infaction, Ventricular Tachycardia, and Ventricular Fibrillation) and robust heartbeat detection from multimodal physiological signals (ECG, EEG, BP, EMG, and Respiration).
 Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 and implemented device driver and numerical programming for real-time ECG processing and analysis.
 My current research focuses on stream processing and analytics based on deep learning for the biometric data.&lt;/p&gt;
 </description>
