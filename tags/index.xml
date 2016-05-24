@@ -20,6 +20,8 @@
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2016 - Dec 2017&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Development Environment&lt;/strong&gt;: Linux, Python&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -28,13 +30,8 @@
 &lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In this project, I show how deep learning can be used to optimize electricity load forecasting. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;
+&lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;, &lt;code&gt;Energy Price Forecasting&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
