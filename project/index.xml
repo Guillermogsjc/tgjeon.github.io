@@ -20,13 +20,16 @@
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2006 - Dec 2006&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:
-- Construction of General and IT Category Maps
-- Category Tagging on Thesaurus&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Construction of Lexical Semantic Network for Words of  General and IT Category&lt;/li&gt;
+&lt;li&gt;Category Tagging on Thesaurus&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;In this project, I developed ontologies for general and IT hierarchical categories from about 40,000 words.&lt;/p&gt;
+&lt;p&gt;In this project, I constructed ontologies for general and IT hierarchical categories from about 40,000 words. Along with three other team members who tagged the thesaurus.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
 
@@ -35,6 +38,9 @@
 &lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;OWL&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reports&lt;/strong&gt;
+과학기술 시소러스 구축 연구 (Construction on Thesaurus of Science and Technology) , 한국과학기술정보연구원 (Korea Institute of Science and Technology), [ISBN: 89-5884-663-1 93500] &lt;a href=&#34;http://semantic.kisti.re.kr/technical_reports/pdf/isbn/001.pdf&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
