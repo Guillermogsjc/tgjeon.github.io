@@ -7,101 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Thu, 01 Dec 2016 10:44:06 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 May 2016 10:44:26 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Integrated Management System of Basin Information in Yeongsan River and Seomjin River Basins</title>
-      <link>https://tgjeon.github.io/project/water_system_management_platform_for_youngsan_river_and_sumjin_river/</link>
-      <pubDate>Thu, 01 Dec 2016 10:44:06 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/water_system_management_platform_for_youngsan_river_and_sumjin_river/</guid>
-      <description>
-
-&lt;h3 id=&#34;project-information:580338f01107f6e57ad79e6ef570174a&#34;&gt;Project Information&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Ministry of Environment, South Korea&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Dec 2006 - Aug 2007&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Development of core systems for integrating operation&lt;/li&gt;
-&lt;li&gt;Development of web-based core systems for integrating operation&lt;/li&gt;
-&lt;li&gt;Design of system for data process from real-time data of water quality and volumetric flow rate&lt;/li&gt;
-&lt;li&gt;Development and integration of systems&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Basin Information&lt;/code&gt;, &lt;code&gt;Data Visualization&lt;/code&gt;, &lt;code&gt;Statistical Analytics&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;PHP&lt;/code&gt;, &lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Report&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;Develeopment of Integrated Management System of Basic Information in Yeongsan and Seomjin River Basins&amp;rdquo;, Basin Management Research Center, 2007. &lt;a href=&#34;http://river.nier.go.kr/yeongsan/download/project/2006-env4.html&#34;&gt;Link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;descriptions:580338f01107f6e57ad79e6ef570174a&#34;&gt;Descriptions&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In this project, I have contributed to developed integrated system for watershed manager. In developed systems, the calibrated watershed model was applied to execute scenario analysis and various environmental information about Youngsan and Seomjin River was also implemented&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Development of core systems for integrating operation
-
-&lt;ul&gt;
-&lt;li&gt;Management of user, document, file, multimedia, and network in integrating operation system&lt;/li&gt;
-&lt;li&gt;Design and development to set up a system environment for integration&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Development of web-based core systems for integrating operation
-
-&lt;ul&gt;
-&lt;li&gt;Development of graphical user interface (GUI)&lt;/li&gt;
-&lt;li&gt;Use and development of interpreter/builder of web-integrating system&lt;/li&gt;
-&lt;li&gt;Design and development to set up a web-based system environment for integration&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Design of system for data process from real-time data of water quality and volumetric flow rate
-
-&lt;ul&gt;
-&lt;li&gt;Analysis from a questionnaire of user&lt;/li&gt;
-&lt;li&gt;Investigation of data structure and quality credibility from real-time (raw) data&lt;/li&gt;
-&lt;li&gt;Investigation of data structure from observed data&lt;/li&gt;
-&lt;li&gt;Comparison and verification of data between real-time data and observed data&lt;/li&gt;
-&lt;li&gt;Construction of reliable raw data from systematic data analysis&lt;/li&gt;
-&lt;li&gt;Selection and development of models for data process&lt;/li&gt;
-&lt;li&gt;Investigation of credibility of secondary data (information)&lt;/li&gt;
-&lt;li&gt;Analysis and modification of errors in the models&lt;/li&gt;
-&lt;li&gt;Design of a system for data process&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Development and integration of systems&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Screenshots&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/Basin_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Data analysis from measured water quality&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/Basin_2.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Target basins from Yeongsan River and Seomjin River&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>sentiment_classification_system</title>
@@ -359,6 +266,22 @@ Figure 1: 딥 러닝 알고리즘으로 부터 학습된 계층형 특징들.&lt
 &lt;h3 id=&#34;conclusion-to-part-1:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Conclusion to Part 1&lt;/h3&gt;
 
 &lt;hr /&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>https://tgjeon.github.io/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://tgjeon.github.io/home/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
+
+&lt;p&gt;As research scientist, my focus has been on identifying technologies that further healthcare based on machine learning. I have spent the last 7 years for diagnosing cardiac diseases (Atrial Fibrillation, Myocardial Infaction, Ventricular Tachycardia, and Ventricular Fibrillation) and robust heartbeat detection from multimodal physiological signals (ECG, EEG, BP, EMG, and Respiration).
+Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 and implemented device driver and numerical programming for real-time ECG processing and analysis.
+My current research focuses on stream processing and analytics based on deep learning for the biometric data.&lt;/p&gt;
 </description>
     </item>
     
