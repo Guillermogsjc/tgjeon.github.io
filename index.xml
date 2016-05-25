@@ -7,164 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Wed, 25 May 2016 10:44:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 May 2016 10:29:55 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>sentiment_classification_system</title>
-      <link>https://tgjeon.github.io/project/sentiment_classification_system/</link>
-      <pubDate>Wed, 25 May 2016 10:44:26 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/sentiment_classification_system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>integrated_software_for_testing_smia_camera_module_systems</title>
-      <link>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</link>
-      <pubDate>Wed, 25 May 2016 10:43:24 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data_analysis_and_decision_support_system_in_dsn</title>
-      <link>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</link>
-      <pubDate>Wed, 25 May 2016 10:42:11 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>process_optimization_to_support_localization_of_desalination_plant</title>
-      <link>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</link>
-      <pubDate>Wed, 25 May 2016 10:41:42 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>object_recognition_algorithms_using_stereo_camera</title>
-      <link>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</link>
-      <pubDate>Wed, 25 May 2016 10:40:57 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>european_traditional_architectural_style_using_custom_media_skin</title>
-      <link>https://tgjeon.github.io/project/european_traditional_architectural_style_using_custom_media_skin/</link>
-      <pubDate>Wed, 25 May 2016 10:40:14 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/european_traditional_architectural_style_using_custom_media_skin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>improved_diagnosis_of_atrial_fibrilaation_for_u healthcare</title>
-      <link>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</link>
-      <pubDate>Wed, 25 May 2016 09:59:35 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data_mining_methods_for_diagnosis_of_atrial_fibrillation</title>
-      <link>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</link>
-      <pubDate>Wed, 25 May 2016 09:59:00 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>obstacle_characterization_map</title>
-      <link>https://tgjeon.github.io/project/obstacle_characterization_map/</link>
-      <pubDate>Wed, 25 May 2016 09:58:16 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/obstacle_characterization_map/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Diagnosis Algorithm for Myocardial Ischemia and Heart Signals</title>
-      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
-      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2012 - Dec 2013&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
-      <link>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
-      <pubDate>Thu, 19 May 2016 13:58:31 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2014 - Dec 2015&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
-&lt;li&gt;Optimize electricity load forecasting with energy patterns and factor diversification.&lt;/li&gt;
-&lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In this project, I show how deep learning can be used to optimize electricity load forecasting. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Living Energy: distributed-intelligence management and operation for smart energy</title>
-      <link>https://tgjeon.github.io/project/living_energy/</link>
-      <pubDate>Thu, 19 May 2016 10:54:56 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/living_energy/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2016 - Dec 2017&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Development Environment&lt;/strong&gt;: Linux, Python&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
-&lt;li&gt;Optimize electricity load forecasting with energy patterns and factor diversification.&lt;/li&gt;
-&lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;
-&lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;, &lt;code&gt;Energy Price Forecasting&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
@@ -283,6 +127,114 @@ Figure 1: 딥 러닝 알고리즘으로 부터 학습된 계층형 특징들.&lt
 Also, I have designed and developed a prototype based on AM335x ARM Cortex-A8 and implemented device driver and numerical programming for real-time ECG processing and analysis.
 My current research focuses on stream processing and analytics based on deep learning for the biometric data.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
+      <link>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</link>
+      <pubDate>Fri, 15 Jan 2016 01:26:13 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/robust_detection_of_heartbeats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iterative Feature Selection Method for Shock Advice Algorithm with Artifact-Free ECG</title>
+      <link>https://tgjeon.github.io/publication/iterative_feature_selection/</link>
+      <pubDate>Wed, 16 Dec 2015 01:52:27 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/iterative_feature_selection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Implementation of portable device for real-time ECG signal analysis</title>
+      <link>https://tgjeon.github.io/publication/implementation_of_portable_device/</link>
+      <pubDate>Wed, 10 Dec 2014 01:43:07 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/implementation_of_portable_device/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heart beat detection method with estimation of regular intervals between ECG and blood pressure</title>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/</link>
+      <pubDate>Sun, 07 Sep 2014 09:15:02 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimation_of_regular_intervals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heart Beat Detection Method using Estimated Regular Intervals from ECG and Blood Pressure</title>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</link>
+      <pubDate>Sun, 22 Jun 2014 09:21:50 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_with_estimated_regular_intervals_from_ECG_and_BP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heart Beat Detection Method using Heterogeneous Physiological Signal Analysis</title>
+      <link>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</link>
+      <pubDate>Wed, 12 Mar 2014 09:24:54 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Developing Detection Algorithms of Heart Diseases and Portable ECG</title>
+      <link>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</link>
+      <pubDate>Thu, 24 Jan 2013 09:31:37 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Region based Scene Segmentation method for Topography Analysis</title>
+      <link>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</link>
+      <pubDate>Thu, 22 Nov 2012 09:37:32 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Framework for Generating Obstacle Feature Map Using UAV Imaging</title>
+      <link>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</link>
+      <pubDate>Fri, 18 Jun 2010 09:40:45 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bio-Inspired Computing: Design and Applications</title>
+      <link>https://tgjeon.github.io/publication/master_thesis/</link>
+      <pubDate>Thu, 19 Feb 2009 10:06:15 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/master_thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fast Scale-Invariant Feature Transform using Niching Particle Swarm Optimization</title>
+      <link>https://tgjeon.github.io/publication/fast_scale_invariant_feature_transform/</link>
+      <pubDate>Tue, 17 Feb 2009 09:45:53 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/fast_scale_invariant_feature_transform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A New GA-based Data Fusion Methodology for Detecting Harmful Algal Blooms</title>
+      <link>https://tgjeon.github.io/publication/ga_based_data_fusion/</link>
+      <pubDate>Mon, 08 Dec 2008 09:49:02 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/ga_based_data_fusion/</guid>
+      <description></description>
     </item>
     
   </channel>

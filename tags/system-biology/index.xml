@@ -7,30 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Wed, 25 May 2016 09:57:46 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 May 2016 13:58:31 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/tags/system-biology/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Diagnosis Algorithm for Myocardial Ischemia and Heart Signals</title>
-      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
-      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2012 - Dec 2013&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
@@ -38,7 +16,13 @@
       <pubDate>Thu, 19 May 2016 13:58:31 +0900</pubDate>
       
       <guid>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
+      <description>
+
+&lt;h3 id=&#34;project-information:c6e5bc6351153301147d684098161de9&#34;&gt;Project Information&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2014 - Dec 2015&lt;/p&gt;
 
@@ -50,13 +34,53 @@
 &lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;descriptions:c6e5bc6351153301147d684098161de9&#34;&gt;Descriptions&lt;/h3&gt;
+
+&lt;hr /&gt;
+
 &lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;In this project, I show how deep learning can be used to optimize electricity load forecasting. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Screenshots&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diagnosis Algorithm for Myocardial Ischemia and Heart Signals</title>
+      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
+      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
+      <description>
+
+&lt;h3 id=&#34;project-information:edadff7b206ad0b3bb71ddf35c6505a6&#34;&gt;Project Information&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2012 - Dec 2013&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;descriptions:edadff7b206ad0b3bb71ddf35c6505a6&#34;&gt;Descriptions&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Screenshots&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -7,137 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Wed, 25 May 2016 10:44:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 May 2016 10:29:55 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>sentiment_classification_system</title>
-      <link>https://tgjeon.github.io/project/sentiment_classification_system/</link>
-      <pubDate>Wed, 25 May 2016 10:44:26 +0900</pubDate>
+      <title>Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
+      <link>https://tgjeon.github.io/project/cnn_for_mnist/</link>
+      <pubDate>Wed, 04 May 2016 10:29:55 +0900</pubDate>
       
-      <guid>https://tgjeon.github.io/project/sentiment_classification_system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>integrated_software_for_testing_smia_camera_module_systems</title>
-      <link>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</link>
-      <pubDate>Wed, 25 May 2016 10:43:24 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data_analysis_and_decision_support_system_in_dsn</title>
-      <link>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</link>
-      <pubDate>Wed, 25 May 2016 10:42:11 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>process_optimization_to_support_localization_of_desalination_plant</title>
-      <link>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</link>
-      <pubDate>Wed, 25 May 2016 10:41:42 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>object_recognition_algorithms_using_stereo_camera</title>
-      <link>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</link>
-      <pubDate>Wed, 25 May 2016 10:40:57 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>european_traditional_architectural_style_using_custom_media_skin</title>
-      <link>https://tgjeon.github.io/project/european_traditional_architectural_style_using_custom_media_skin/</link>
-      <pubDate>Wed, 25 May 2016 10:40:14 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/european_traditional_architectural_style_using_custom_media_skin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>improved_diagnosis_of_atrial_fibrilaation_for_u healthcare</title>
-      <link>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</link>
-      <pubDate>Wed, 25 May 2016 09:59:35 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data_mining_methods_for_diagnosis_of_atrial_fibrillation</title>
-      <link>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</link>
-      <pubDate>Wed, 25 May 2016 09:59:00 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>obstacle_characterization_map</title>
-      <link>https://tgjeon.github.io/project/obstacle_characterization_map/</link>
-      <pubDate>Wed, 25 May 2016 09:58:16 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/obstacle_characterization_map/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Diagnosis Algorithm for Myocardial Ischemia and Heart Signals</title>
-      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
-      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
+      <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2012 - Dec 2013&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Individual project&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: May, 2016&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Task&lt;/strong&gt;: Classification of images of handwritten single digit.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
-      <link>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
-      <pubDate>Thu, 19 May 2016 13:58:31 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2014 - Dec 2015&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
-&lt;li&gt;Optimize electricity load forecasting with energy patterns and factor diversification.&lt;/li&gt;
-&lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In this project, I show how deep learning can be used to optimize electricity load forecasting. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
+&lt;p&gt;In this individual project, I show how TensorFlow can be used to implement the Convolutional Neural Networks. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.
+Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_MNIST/&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Convolutional Neural Networks&lt;/code&gt;, &lt;code&gt;Digit Recognition&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -167,27 +61,146 @@
     </item>
     
     <item>
-      <title>Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
-      <link>https://tgjeon.github.io/project/cnn_for_mnist/</link>
-      <pubDate>Wed, 04 May 2016 10:29:55 +0900</pubDate>
+      <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
+      <link>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</link>
+      <pubDate>Thu, 19 May 2016 13:58:31 +0900</pubDate>
       
-      <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
+      <guid>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</guid>
+      <description>
 
-&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Individual project&lt;/p&gt;
+&lt;h3 id=&#34;project-information:c6e5bc6351153301147d684098161de9&#34;&gt;Project Information&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: May, 2016&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Task&lt;/strong&gt;: Classification of images of handwritten single digit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2014 - Dec 2015&lt;/p&gt;
 
-&lt;p&gt;In this individual project, I show how TensorFlow can be used to implement the Convolutional Neural Networks. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.
-Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_MNIST/&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
+&lt;li&gt;Optimize electricity load forecasting with energy patterns and factor diversification.&lt;/li&gt;
+&lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Convolutional Neural Networks&lt;/code&gt;, &lt;code&gt;Digit Recognition&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;descriptions:c6e5bc6351153301147d684098161de9&#34;&gt;Descriptions&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this project, I show how deep learning can be used to optimize electricity load forecasting. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Screenshots&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diagnosis Algorithm for Myocardial Ischemia and Heart Signals</title>
+      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
+      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
+      <description>
+
+&lt;h3 id=&#34;project-information:edadff7b206ad0b3bb71ddf35c6505a6&#34;&gt;Project Information&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: System Biology Research Center (SBRC) at Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2012 - Dec 2013&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;descriptions:edadff7b206ad0b3bb71ddf35c6505a6&#34;&gt;Descriptions&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Screenshots&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Obstacle Characterization Map</title>
+      <link>https://tgjeon.github.io/project/obstacle_characterization_map/</link>
+      <pubDate>Wed, 25 May 2016 09:58:16 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/obstacle_characterization_map/</guid>
+      <description>&lt;p&gt;under construction&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Object Recognition Algorithms using Stereo Camera</title>
+      <link>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</link>
+      <pubDate>Wed, 25 May 2016 10:40:57 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</guid>
+      <description>&lt;p&gt;Under construction&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Mining Methods for Diagnosis of Atrial Fibrillation</title>
+      <link>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</link>
+      <pubDate>Wed, 25 May 2016 09:59:00 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</guid>
+      <description>&lt;p&gt;under construction&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Improved Diagnosis of Atrial Fibrillation for U-Healthcare</title>
+      <link>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</link>
+      <pubDate>Wed, 25 May 2016 09:59:35 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</guid>
+      <description>&lt;p&gt;under construction&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Process Optimization to Support Localization of Desalination Plant</title>
+      <link>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</link>
+      <pubDate>Wed, 25 May 2016 10:41:42 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</guid>
+      <description>&lt;p&gt;under construction&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Analysis and Decision Support System in Distributed Sensor Networks</title>
+      <link>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</link>
+      <pubDate>Wed, 25 May 2016 10:42:11 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</guid>
+      <description>&lt;p&gt;Under construction..&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integrated Software for Testing  SMIA Camera Module Systems</title>
+      <link>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</link>
+      <pubDate>Wed, 25 May 2016 10:43:24 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</guid>
+      <description>&lt;p&gt;under construction..&lt;/p&gt;
 </description>
     </item>
     
@@ -281,6 +294,16 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
 &lt;ul&gt;
 &lt;li&gt;Target basins from Yeongsan River and Seomjin River&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentiment Classification System</title>
+      <link>https://tgjeon.github.io/project/sentiment_classification_system/</link>
+      <pubDate>Wed, 25 May 2016 10:44:26 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/sentiment_classification_system/</guid>
+      <description>&lt;p&gt;Under construction..&lt;/p&gt;
 </description>
     </item>
     

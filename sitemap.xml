@@ -3,68 +3,8 @@
   
   <url>
     <loc>https://tgjeon.github.io/</loc>
-    <lastmod>2016-05-25T10:44:26+09:00</lastmod>
+    <lastmod>2016-05-04T10:29:55+09:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/sentiment_classification_system/</loc>
-    <lastmod>2016-05-25T10:44:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</loc>
-    <lastmod>2016-05-25T10:43:24+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</loc>
-    <lastmod>2016-05-25T10:42:11+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</loc>
-    <lastmod>2016-05-25T10:41:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</loc>
-    <lastmod>2016-05-25T10:40:57+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/european_traditional_architectural_style_using_custom_media_skin/</loc>
-    <lastmod>2016-05-25T10:40:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</loc>
-    <lastmod>2016-05-25T09:59:35+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</loc>
-    <lastmod>2016-05-25T09:59:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/obstacle_characterization_map/</loc>
-    <lastmod>2016-05-25T09:58:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</loc>
-    <lastmod>2016-05-25T09:57:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</loc>
-    <lastmod>2016-05-19T13:58:31+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/living_energy/</loc>
-    <lastmod>2016-05-19T10:54:56+09:00</lastmod>
   </url>
   
   <url>
@@ -163,8 +103,63 @@
   </url>
   
   <url>
+    <loc>https://tgjeon.github.io/project/living_energy/</loc>
+    <lastmod>2016-05-19T10:54:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/robust_detection_of_heartbeats_in_multimodal_physiological_data/</loc>
+    <lastmod>2016-05-19T13:58:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</loc>
+    <lastmod>2016-05-25T09:57:46+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/obstacle_characterization_map/</loc>
+    <lastmod>2016-05-25T09:58:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/object_recognition_algorithms_using_stereo_camera/</loc>
+    <lastmod>2016-05-25T10:40:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</loc>
+    <lastmod>2016-05-25T09:59:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</loc>
+    <lastmod>2016-05-25T09:59:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/process_optimization_to_support_localization_of_desalination_plant/</loc>
+    <lastmod>2016-05-25T10:41:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/data_analysis_and_decision_support_system_in_dsn/</loc>
+    <lastmod>2016-05-25T10:42:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/integrated_software_for_testing_smia_camera_module_systems/</loc>
+    <lastmod>2016-05-25T10:43:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tgjeon.github.io/project/water_system_management_platform_for_youngsan_river_and_sumjin_river/</loc>
     <lastmod>2006-12-01T10:44:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/sentiment_classification_system/</loc>
+    <lastmod>2016-05-25T10:44:26+09:00</lastmod>
   </url>
   
   <url>
