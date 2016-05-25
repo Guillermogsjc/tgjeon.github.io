@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ontology on Taegyun Jeon</title>
+    <link>https://tgjeon.github.io/tags/ontology/</link>
+    <description>Recent content in Ontology on Taegyun Jeon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
+    <lastBuildDate>Wed, 25 May 2016 10:44:50 +0900</lastBuildDate>
+    <atom:link href="https://tgjeon.github.io/tags/ontology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Knowledge of Science and Technology Platform</title>
+      <link>https://tgjeon.github.io/project/knowledge_of_science_and_technology_platform/</link>
+      <pubDate>Wed, 25 May 2016 10:44:50 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/knowledge_of_science_and_technology_platform/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Korea Institute of Science and Technology Information (KISTI)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2006 - Dec 2006&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Construction of Lexical Semantic Network for Words of  General and IT Category&lt;/li&gt;
+&lt;li&gt;Category Tagging on Thesaurus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this project, I constructed ontologies for general and IT hierarchical categories from about 40,000 words. Along with three other team members who tagged the thesaurus.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/thesaurus_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Flowchart for assignment of classification codes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/thesaurus_2.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Flowchart for assignment of compound words&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Ontology&lt;/code&gt;, &lt;code&gt;Thesaurus Tagging&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;OWL&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reports&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;과학기술 시소러스 구축 연구 (Construction on Thesaurus of Science and Technology)&amp;rdquo;, 한국과학기술정보연구원 (Korea Institute of Science and Technology), [ISBN: 89-5884-663-1 93500] &lt;a href=&#34;http://semantic.kisti.re.kr/technical_reports/pdf/isbn/001.pdf&#34;&gt;Link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
