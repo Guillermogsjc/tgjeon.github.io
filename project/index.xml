@@ -7,8 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Thu, 19 May 2016 13:58:31 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 May 2016 09:59:35 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>improved_diagnosis_of_atrial_fibrilaation_for_u healthcare</title>
+      <link>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</link>
+      <pubDate>Wed, 25 May 2016 09:59:35 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data_mining_methods_for_diagnosis_of_atrial_fibrillation</title>
+      <link>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</link>
+      <pubDate>Wed, 25 May 2016 09:59:00 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>obstacle_characterization_map</title>
+      <link>https://tgjeon.github.io/project/obstacle_characterization_map/</link>
+      <pubDate>Wed, 25 May 2016 09:58:16 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/obstacle_characterization_map/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals</title>
+      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
+      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>

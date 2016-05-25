@@ -7,8 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Thu, 19 May 2016 13:58:31 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 May 2016 09:59:35 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>improved_diagnosis_of_atrial_fibrilaation_for_u healthcare</title>
+      <link>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</link>
+      <pubDate>Wed, 25 May 2016 09:59:35 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/improved_diagnosis_of_atrial_fibrilaation_for_u-healthcare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data_mining_methods_for_diagnosis_of_atrial_fibrillation</title>
+      <link>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</link>
+      <pubDate>Wed, 25 May 2016 09:59:00 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/data_mining_methods_for_diagnosis_of_atrial_fibrillation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>obstacle_characterization_map</title>
+      <link>https://tgjeon.github.io/project/obstacle_characterization_map/</link>
+      <pubDate>Wed, 25 May 2016 09:58:16 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/obstacle_characterization_map/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals</title>
+      <link>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</link>
+      <pubDate>Wed, 25 May 2016 09:57:46 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/project/diagnosis_algorithm_for_myocardial_ischemia_and_heart_signals/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Robust Detection of Heart Beats in Multimodal Physiological Data</title>
@@ -233,42 +269,6 @@ My current research focuses on stream processing and analytics based on deep lea
       <pubDate>Wed, 12 Mar 2014 09:24:54 +0900</pubDate>
       
       <guid>https://tgjeon.github.io/publication/heartbeat_detection_method_using_heterogeneous_physiological_signal_analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Developing Detection Algorithms of Heart Diseases and Portable ECG</title>
-      <link>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</link>
-      <pubDate>Thu, 24 Jan 2013 09:31:37 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/developing_detection_algorithms_of_heart_diseases_and_portable_ECG/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Region based Scene Segmentation method for Topography Analysis</title>
-      <link>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</link>
-      <pubDate>Thu, 22 Nov 2012 09:37:32 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/region_based_scene_segmentation_method_for_topography_analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Framework for Generating Obstacle Feature Map Using UAV Imaging</title>
-      <link>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</link>
-      <pubDate>Fri, 18 Jun 2010 09:40:45 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/framework_for_generating_obstacle_feature_map_using_uav_imaging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bio-Inspired Computing: Design and Applications</title>
-      <link>https://tgjeon.github.io/publication/master_thesis/</link>
-      <pubDate>Thu, 19 Feb 2009 10:06:15 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/master_thesis/</guid>
       <description></description>
     </item>
     
