@@ -3,23 +3,18 @@
   
   <url>
     <loc>https://tgjeon.github.io/</loc>
-    <lastmod>2016-05-25T10:44:50+09:00</lastmod>
+    <lastmod>2016-12-01T10:44:06+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tgjeon.github.io/project/knowledge_of_science_and_technology_platform/</loc>
-    <lastmod>2016-05-25T10:44:50+09:00</lastmod>
+    <loc>https://tgjeon.github.io/project/water_system_management_platform_for_youngsan_river_and_sumjin_river/</loc>
+    <lastmod>2016-12-01T10:44:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://tgjeon.github.io/project/sentiment_classification_system/</loc>
     <lastmod>2016-05-25T10:44:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgjeon.github.io/project/water_system_management_platform_for_youngsan_river_and_sumjin_river/</loc>
-    <lastmod>2016-05-25T10:44:06+09:00</lastmod>
   </url>
   
   <url>
@@ -170,6 +165,11 @@
   <url>
     <loc>https://tgjeon.github.io/publication/sentimental_classification_system/</loc>
     <lastmod>2007-02-05T10:01:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgjeon.github.io/project/knowledge_of_science_and_technology_platform/</loc>
+    <lastmod>2006-01-01T10:44:50+09:00</lastmod>
   </url>
   
 </urlset>
