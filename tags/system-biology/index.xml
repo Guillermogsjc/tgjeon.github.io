@@ -29,14 +29,19 @@
 &lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
-&lt;li&gt;Optimize electricity load forecasting with energy patterns and factor diversification.&lt;/li&gt;
-&lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
+&lt;li&gt;Detect heartbeat position when ECG signal is contaminated&lt;/li&gt;
+&lt;li&gt;Design complementary model with the other physiological signals (EEG, EMG, EOG, Blood Pressure, Respiration, and Stroke Volume)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Physiological Signal Processing&lt;/code&gt;, &lt;code&gt;Wavelet Analysis&lt;/code&gt;, &lt;code&gt;Electrocardiogram (ECG)&lt;/code&gt;, &lt;code&gt;Blood Pressure (BP)&lt;/code&gt;, &lt;code&gt;Electroencephalogram (EEG)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;C&lt;/code&gt;, &lt;code&gt;MATLAB&lt;/code&gt;, &lt;code&gt;WFDB (WaveForm DataBase) Software Package&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Report&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;descriptions:c6e5bc6351153301147d684098161de9&#34;&gt;Descriptions&lt;/h3&gt;
 
@@ -44,7 +49,7 @@
 
 &lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;In this project, I show how deep learning can be used to optimize electricity load forecasting. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
+&lt;p&gt;In this project, I have designed and implemented an algorithm for robust heartbeat detection using a multimodal data association method supplementing ECG (being regarded as a primary input signal) with blood pressure (BP) and electroencephalogram (EEG) viewed as complementary inputs.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Screenshots&lt;/strong&gt;&lt;/p&gt;
 </description>
