@@ -16,22 +16,43 @@
       <pubDate>Wed, 04 May 2016 10:29:55 +0900</pubDate>
       
       <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
+      <description>
+
+&lt;h3 id=&#34;project-information:4e0834f1f8e7b3edf13b26b2607f7c40&#34;&gt;Project Information&lt;/h3&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Individual project&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: May, 2016&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Task&lt;/strong&gt;: Classification of images of handwritten single digit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Task&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Classification of images of handwritten single digit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Digit Recognition&lt;/code&gt;, &lt;code&gt;Computer Vision&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Convolutional Neural Networks&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Report&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_MNIST/&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;descriptions:4e0834f1f8e7b3edf13b26b2607f7c40&#34;&gt;Descriptions&lt;/h3&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;strong&gt;Description and contributions&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;In this individual project, I show how TensorFlow can be used to implement the Convolutional Neural Networks. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.
-Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_MNIST/&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this individual project, I show how TensorFlow can be used to implement the Convolutional Neural Networks. I introduce a short descriptions of the model, which serves both as a refresher but also as to anchor the notation and show how mathematical expressions are mapped onto TensorFlow graph.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Convolutional Neural Networks&lt;/code&gt;, &lt;code&gt;Digit Recognition&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tgjeon.github.io/img/mnist.png&#34; alt=&#34;MNIST&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -41,22 +62,37 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
       <pubDate>Thu, 19 May 2016 10:54:56 +0900</pubDate>
       
       <guid>https://tgjeon.github.io/project/living_energy/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
+      <description>
 
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan 2016 - Dec 2017&lt;/p&gt;
+&lt;h3 id=&#34;project-information:15b937f8a3c23d3c764ee1c5498f08cd&#34;&gt;Project Information&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Development Environment&lt;/strong&gt;: Linux, Python&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Gwangu Institute of Science and Technology (GIST)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Jan, 2016 - Dec, 2017&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
 &lt;li&gt;Optimize electricity load forecasting with energy patterns and factor diversification.&lt;/li&gt;
+&lt;li&gt;Develop perversive demand response (DR) based on Big Data analytics.&lt;/li&gt;
 &lt;li&gt;Drive a long-term analysis and reporting based on load forecasting and electricity consumptions.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Knowledge and Skills&lt;/strong&gt;
-&lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;, &lt;code&gt;Load Forecasting&lt;/code&gt;, &lt;code&gt;Energy Price Forecasting&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Electric Load Forecasting&lt;/code&gt;, &lt;code&gt;Energy Price Forecasting&lt;/code&gt;, &lt;code&gt;Short-term Analytics&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;TensorFlow&lt;/code&gt;, &lt;code&gt;Recurrent Neural Networks&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;descriptions:15b937f8a3c23d3c764ee1c5498f08cd&#34;&gt;Descriptions&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This project is ongoing work. I will reveal the progress when we reach the proper level of milestones.&lt;/p&gt;
 </description>
     </item>
     
@@ -223,7 +259,7 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
 
 &lt;p&gt;&lt;strong&gt;Sponsor&lt;/strong&gt;: Ministry of Environment, South Korea&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Dec 2006 - Aug 2007&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Period&lt;/strong&gt;: Dec, 2006 - Aug, 2007&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt;:&lt;/p&gt;
 
@@ -236,11 +272,11 @@ Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_M
 
 &lt;p&gt;&lt;strong&gt;Related Knowledge&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Basin Information&lt;/code&gt;, &lt;code&gt;Data Visualization&lt;/code&gt;, &lt;code&gt;Statistical Analytics&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Web Mining&lt;/code&gt;, &lt;code&gt;Basin Information&lt;/code&gt;, &lt;code&gt;Data Visualization&lt;/code&gt;, &lt;code&gt;Statistical Analytics&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;PHP&lt;/code&gt;, &lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PHP&lt;/code&gt;, &lt;code&gt;Linux&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;, &lt;code&gt;Perl&lt;/code&gt;, &lt;code&gt;Shell Script&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Report&lt;/strong&gt;&lt;/p&gt;
 
