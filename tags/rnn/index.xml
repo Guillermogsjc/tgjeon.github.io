@@ -30,7 +30,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Classical Dynamic System:
-&lt;code&gt;$$$ S^{ (t) }=f(s^{ (t-1) };\theta ) $$$&lt;/code&gt;, 여기서 &lt;code&gt;$$$s^{(t)}$$$&lt;/code&gt; 는 시스템의 상태를 나타낸다.&lt;/p&gt;&lt;/li&gt;
+&lt;code&gt;$ S^{ (t) }=f(s^{ (t-1) };\theta ) $&lt;/code&gt;, 여기서 &lt;code&gt;$$$s^{(t)}$$$&lt;/code&gt; 는 시스템의 상태를 나타낸다.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Dynamical system driven by an external signal $$$ x^{(t)} $$$:
 $$$ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $$$&lt;/p&gt;&lt;/li&gt;
