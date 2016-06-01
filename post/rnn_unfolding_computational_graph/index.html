@@ -144,18 +144,21 @@
 <li><p><code>Classical Dynamic System</code>:
 $ S^{ (t) }=f(s^{ (t-1) };\theta ) $, 여기서 $s^{(t)}$ 는 시스템의 상태를 나타낸다.</p></li>
 
-<li><p><code>Dynamical system driven by an external signal</code> $ x^{(t)} $:
+<li><p><code>Dynamical system driven by an external signal $ x^{(t)} $</code>:
 $ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $</p></li>
 </ul>
 
 <p>Recurrent Neural Networks (RNN) 은 다양한 방법으로 만들수 있다. 대부분은 feedforward neural network로 간주되며, recurrence (재귀표현)를 포함하고 있다면 Recurrent Neural Networks (RNN) 이라고 할 수 있다.</p>
 
-<p>앞서 나온 식을 이용해, 다음과 같이 유사한 형태의 식으로 RNN의 hidden unit을 정의한다.
+<p>앞서 나온 <code>Dynamic System</code> 식을 이용해, 다음과 같이 유사한 형태의 식으로 RNN의 hidden unit을 정의한다.
 $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$</p>
 
-<p>RNN이 과거 데이터를 학습하고, 미래를 예측하는 일을 수행한다고 하자.
-- 입력: $ x^{(t)}$ (시점 $t$ 까지의 입력)
-- 종합: $ h^{(t)}$ (정보 손실이 있는 종합된 내용)</p>
+<p>예를 들어, RNN이 과거 데이터를 학습하고, 미래를 예측하는 일을 수행한다고 하자.</p>
+
+<ul>
+<li>입력: $ x^{(t)}$ (시점 $t$ 까지의 입력)</li>
+<li>종합: $ h^{(t)}$ (정보 손실이 있는 종합된 내용)</li>
+</ul>
 
 <p>이 과정을 통해 과거 정보에서 선택적으로 필요한 정보만 유지하여 종합한다. 예를 들어, RNN이 통계적 언어 모델링을 통해, 과거의 단어들을 바탕으로 다음에 나올 단어를 예측한다. 이를 위해, 시점 (time step) $t$ 까지 모든 입력을 다 기억할 필요는 없다. 일정한 정보만으로도 문장의 나머지 단어들을 예측하기에 충분하다.</p>
 
@@ -185,7 +188,7 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$</p>
 <p>두가지 RNN 표현법은 다음과 같이 각자의 용도가 있다.</p>
 
 <ol>
-<li><code>Folded (recurrent graph)</code>
+<li><code>Folded graph (recurrent graph)</code>
 
 <ul>
 <li>간단명료하다.</li>
