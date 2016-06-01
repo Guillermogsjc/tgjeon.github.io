@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.15" />
+    <meta name="author" content="Taegyun Jeon">
+    <meta name="description" content="Research Scientist in Machine Learning and Biomedical Engineering">
+
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/hugo-academic.css">
+    
+
+
+    <link rel="shortcut icon" href="https://tgjeon.github.io/img/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://tgjeon.github.io/post/rnn_unfolding_computational_graph/">
+
+    <title>Unfolding Computational Graphs | Taegyun Jeon</title>
+
+</head>
+<body id="top">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://tgjeon.github.io/">Taegyun Jeon</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#top">Home</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#publications">Publications</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#posts">Posts</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#projects">Projects</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#contact">Contact</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+        <h1 itemprop="name">Unfolding Computational Graphs</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-06-02 00:59:05 &#43;0900 KST" itemprop="datePublished">Thu, Jun 2, 2016</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://tgjeon.github.io/tags/deep-learning">Deep Learning</a>, 
+        
+        <a class="article-tag-link" href="https://tgjeon.github.io/tags/translation">Translation</a>, 
+        
+        <a class="article-tag-link" href="https://tgjeon.github.io/tags/rnn">RNN</a>
+        
+    </span>
+    
+    
+
+    
+        
+<ul class="share">
+    <li>
+        <a class="facebook" href="https://www.facebook.com/sharer.php?u=" target="_blank">
+            <i class="fa fa-facebook-square"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+    </li>
+    <li>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=&amp;url=" target="_blank">
+            <i class="fa fa-twitter-square"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+    </li>
+    <li>
+        <a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=" target="_blank">
+            <i class="fa fa-linkedin-square"></i>
+            <span class="hidden">LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a class="email" href="mailto:?subject=&amp;body=">
+            <i class="fa fa-envelope-square"></i>
+            <span class="hidden">Email</span>
+        </a>
+    </li>
+</ul>
+
+
+    
+
+</div>
+
+
+        <div class="post" itemprop="articleBody">
+            
+
+<h3 id="sequence-modeling-recurrent-and-recursive-nets:af5079f711a612e7f7c8a351ea7e20f6">Sequence Modeling: Recurrent and Recursive Nets</h3>
+
+<blockquote>
+<p><a href="http://www.deeplearningbook.org">Original book chapter</a> is written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.</p>
+</blockquote>
+
+<p>이 포스트는 &ldquo;Deep Learning (2016, Mit Press)&rdquo; 의 Recurrent Neural Networks에 해당되는 내용을 한글로 정리한 내용입니다. 해당 그림은 저작권 문제로 위 링크를 참고하여 확인하시기 바랍니다.</p>
+
+<h2 id="unfolding-computational-graphs-그래프-풀어보기:af5079f711a612e7f7c8a351ea7e20f6">Unfolding Computational Graphs (그래프 풀어보기)</h2>
+
+<ul>
+<li><p>Classical Dynamic System:
+$$$ S^{ (t) }=f(s^{ (t-1) };\theta ) $$$, 여기서 $$$s^{(t)}$$$ 는 시스템의 상태를 나타낸다.</p></li>
+
+<li><p>Dynamical system driven by an external signal $$$ x^{(t)} $$$:
+$$$ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $$$</p></li>
+</ul>
+
+<p>Recurrent Neural Networks (RNN) 은 다양한 방법으로 만들수 있다. 대부분은 feedforward neural network로 간주되며, recurrence (재귀표현)를 포함하고 있다면 Recurrent Neural Networks (RNN) 이라고 할 수 있다.</p>
+
+<p>앞서 나온 식을 이용해, 다음과 같이 유사한 형태의 식으로 RNN의 hidden unit을 정의한다.
+$$$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$$</p>
+
+<p>RNN이 과거 데이터를 학습하고, 미래를 예측하는 일을 수행한다고 하자.
+- 입력: $$$ x^{(t)}$$$ (시점 $$$ t$$$ 까지의 입력)
+- 종합: $$$ h^{(t)}$$$ (정보 손실이 있는 종합된 내용)</p>
+
+<p>이 과정을 통해 과거 정보에서 선택적으로 필요한 정보만 유지하여 종합한다. 예를 들어, RNN이 통계적 언어 모델링을 통해, 과거의 단어들을 바탕으로 다음에 나올 단어를 예측한다. 이를 위해, 시점 (time step) $$$t$$$ 까지 모든 입력을 다 기억할 필요는 없다. 일정한 정보만으로도 문장의 나머지 단어들을 예측하기에 충분하다.</p>
+
+<p>RNN을 그림으로 묘사하는 두가지 방법이 있다.
+1. Folded graph: 모든 기능을 하나의 노드로만 표현.
+2. Unfolded graph: 각 기능들이 각각의 노드로 표현. Unfolded 표현은 sequence 길이와 연관된 크기를 가진다.</p>
+
+<p>Unfolding 과정은 다음과 같은 장점을 지닌다.
+- sequence 길이와 상관없이, 학습된 모델은 항상 같은 입력 크기를 가진다.
+- 같은 파라미터를 사용하는 전이 함수 (transition function) $$$f$$$ 를 사용할 수 있다.</p>
+
+<p>이 두가지 요인 때문에, 각 시점마다 $$$g^{(t)}$$$ 를 개별적으로 학습시키지 않아도 된다. 같은 파리미터가 공유되기 때문에, 단일 모델 $$$f$$$ 가 모든 sequence 길이와 모든 시점에서 동작한다.</p>
+
+<p>단일화, 공유되는 모델 학습은 일반화를 가능하게 한다.
+1. 학습 데이터상의 sequence 길이에 무관하다.
+2. 적은 학습 데이터로도 예측이 가능하다.</p>
+
+<p>두가지 RNN 표현법은 다음과 같이 각자의 용도가 있다.
+1. Folded (recurrent graph)
+ - 간단명료하다.
+2. Unfolded graph
+ - 각 단계에서 계산 수행을 분명하게 기술한다.
+ - 진행 방향에 따라 아이디어를 묘사하기 쉽다.
+ - 정보의 흐름 (Forward): output과 loss의 계산
+ - 정보의 흐름 (Backward): gradient 계산</p>
+
+        </div>
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/"><span aria-hidden="true">&larr;</span> Deep Learning in a Nutshell: Core Concepts</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'tgjeon';
+    var disqus_identifier = 'https:\/\/tgjeon.github.io\/post\/rnn_unfolding_computational_graph\/';
+    var disqus_title = 'Unfolding Computational Graphs';
+    var disqus_url = 'https:\/\/tgjeon.github.io\/post\/rnn_unfolding_computational_graph\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 Taegyun Jeon &middot; 
+
+            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://tgjeon.github.io/js/jquery-1.12.3.min.js"></script>
+        <script src="https://tgjeon.github.io/js/bootstrap.min.js"></script>
+        <script src="https://tgjeon.github.io/js/hugo-academic.js"></script>
+        
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){
+                i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
+                    i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+                m.parentNode.insertBefore(a,m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-77919576-1', 'auto');
+            ga('set', 'anonymizeIp', true);
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+        </script>
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+
+    </body>
+</html>
+

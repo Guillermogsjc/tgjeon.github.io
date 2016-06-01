@@ -7,8 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Sat, 23 Apr 2016 16:58:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jun 2016 00:59:05 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/categories/translation/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unfolding Computational Graphs</title>
+      <link>https://tgjeon.github.io/post/rnn_unfolding_computational_graph/</link>
+      <pubDate>Thu, 02 Jun 2016 00:59:05 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/post/rnn_unfolding_computational_graph/</guid>
+      <description>
+
+&lt;h3 id=&#34;sequence-modeling-recurrent-and-recursive-nets:af5079f711a612e7f7c8a351ea7e20f6&#34;&gt;Sequence Modeling: Recurrent and Recursive Nets&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.deeplearningbook.org&#34;&gt;Original book chapter&lt;/a&gt; is written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 포스트는 &amp;ldquo;Deep Learning (2016, Mit Press)&amp;rdquo; 의 Recurrent Neural Networks에 해당되는 내용을 한글로 정리한 내용입니다. 해당 그림은 저작권 문제로 위 링크를 참고하여 확인하시기 바랍니다.&lt;/p&gt;
+
+&lt;h2 id=&#34;unfolding-computational-graphs-그래프-풀어보기:af5079f711a612e7f7c8a351ea7e20f6&#34;&gt;Unfolding Computational Graphs (그래프 풀어보기)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Classical Dynamic System:
+$$$ S^{ (t) }=f(s^{ (t-1) };\theta ) $$$, 여기서 $$$s^{(t)}$$$ 는 시스템의 상태를 나타낸다.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dynamical system driven by an external signal $$$ x^{(t)} $$$:
+$$$ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $$$&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Recurrent Neural Networks (RNN) 은 다양한 방법으로 만들수 있다. 대부분은 feedforward neural network로 간주되며, recurrence (재귀표현)를 포함하고 있다면 Recurrent Neural Networks (RNN) 이라고 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;앞서 나온 식을 이용해, 다음과 같이 유사한 형태의 식으로 RNN의 hidden unit을 정의한다.
+$$$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$$&lt;/p&gt;
+
+&lt;p&gt;RNN이 과거 데이터를 학습하고, 미래를 예측하는 일을 수행한다고 하자.
+- 입력: $$$ x^{(t)}$$$ (시점 $$$ t$$$ 까지의 입력)
+- 종합: $$$ h^{(t)}$$$ (정보 손실이 있는 종합된 내용)&lt;/p&gt;
+
+&lt;p&gt;이 과정을 통해 과거 정보에서 선택적으로 필요한 정보만 유지하여 종합한다. 예를 들어, RNN이 통계적 언어 모델링을 통해, 과거의 단어들을 바탕으로 다음에 나올 단어를 예측한다. 이를 위해, 시점 (time step) $$$t$$$ 까지 모든 입력을 다 기억할 필요는 없다. 일정한 정보만으로도 문장의 나머지 단어들을 예측하기에 충분하다.&lt;/p&gt;
+
+&lt;p&gt;RNN을 그림으로 묘사하는 두가지 방법이 있다.
+1. Folded graph: 모든 기능을 하나의 노드로만 표현.
+2. Unfolded graph: 각 기능들이 각각의 노드로 표현. Unfolded 표현은 sequence 길이와 연관된 크기를 가진다.&lt;/p&gt;
+
+&lt;p&gt;Unfolding 과정은 다음과 같은 장점을 지닌다.
+- sequence 길이와 상관없이, 학습된 모델은 항상 같은 입력 크기를 가진다.
+- 같은 파라미터를 사용하는 전이 함수 (transition function) $$$f$$$ 를 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 두가지 요인 때문에, 각 시점마다 $$$g^{(t)}$$$ 를 개별적으로 학습시키지 않아도 된다. 같은 파리미터가 공유되기 때문에, 단일 모델 $$$f$$$ 가 모든 sequence 길이와 모든 시점에서 동작한다.&lt;/p&gt;
+
+&lt;p&gt;단일화, 공유되는 모델 학습은 일반화를 가능하게 한다.
+1. 학습 데이터상의 sequence 길이에 무관하다.
+2. 적은 학습 데이터로도 예측이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;두가지 RNN 표현법은 다음과 같이 각자의 용도가 있다.
+1. Folded (recurrent graph)
+ - 간단명료하다.
+2. Unfolded graph
+ - 각 단계에서 계산 수행을 분명하게 기술한다.
+ - 진행 방향에 따라 아이디어를 묘사하기 쉽다.
+ - 정보의 흐름 (Forward): output과 loss의 계산
+ - 정보의 흐름 (Backward): gradient 계산&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deep Learning in a Nutshell: Core Concepts</title>
