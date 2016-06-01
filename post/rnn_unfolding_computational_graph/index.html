@@ -141,46 +141,64 @@
 <h2 id="unfolding-computational-graphs-그래프-풀어보기:af5079f711a612e7f7c8a351ea7e20f6">Unfolding Computational Graphs (그래프 풀어보기)</h2>
 
 <ul>
-<li><p>Classical Dynamic System:
-$ S^x{ (t) }=f(s^{ (t-1) };\theta ) $, 여기서 $s^{(t)}$ 는 시스템의 상태를 나타낸다.</p></li>
+<li><p><code>Classical Dynamic System</code>:
+$ S^{ (t) }=f(s^{ (t-1) };\theta ) $, 여기서 $s^{(t)}$ 는 시스템의 상태를 나타낸다.</p></li>
 
-<li><p>Dynamical system driven by an external signal $$$ x^{(t)} $$$:
-$$$ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $$$</p></li>
+<li><p><code>Dynamical system driven by an external signal</code> $ x^{(t)} $:
+$ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $</p></li>
 </ul>
 
 <p>Recurrent Neural Networks (RNN) 은 다양한 방법으로 만들수 있다. 대부분은 feedforward neural network로 간주되며, recurrence (재귀표현)를 포함하고 있다면 Recurrent Neural Networks (RNN) 이라고 할 수 있다.</p>
 
 <p>앞서 나온 식을 이용해, 다음과 같이 유사한 형태의 식으로 RNN의 hidden unit을 정의한다.
-$$$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$$</p>
+$$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$</p>
 
 <p>RNN이 과거 데이터를 학습하고, 미래를 예측하는 일을 수행한다고 하자.
-- 입력: $$$ x^{(t)}$$$ (시점 $$$ t$$$ 까지의 입력)
-- 종합: $$$ h^{(t)}$$$ (정보 손실이 있는 종합된 내용)</p>
+- 입력: $ x^{(t)}$ (시점 $t$ 까지의 입력)
+- 종합: $ h^{(t)}$ (정보 손실이 있는 종합된 내용)</p>
 
-<p>이 과정을 통해 과거 정보에서 선택적으로 필요한 정보만 유지하여 종합한다. 예를 들어, RNN이 통계적 언어 모델링을 통해, 과거의 단어들을 바탕으로 다음에 나올 단어를 예측한다. 이를 위해, 시점 (time step) $$$t$$$ 까지 모든 입력을 다 기억할 필요는 없다. 일정한 정보만으로도 문장의 나머지 단어들을 예측하기에 충분하다.</p>
+<p>이 과정을 통해 과거 정보에서 선택적으로 필요한 정보만 유지하여 종합한다. 예를 들어, RNN이 통계적 언어 모델링을 통해, 과거의 단어들을 바탕으로 다음에 나올 단어를 예측한다. 이를 위해, 시점 (time step) $t$ 까지 모든 입력을 다 기억할 필요는 없다. 일정한 정보만으로도 문장의 나머지 단어들을 예측하기에 충분하다.</p>
 
-<p>RNN을 그림으로 묘사하는 두가지 방법이 있다.
-1. Folded graph: 모든 기능을 하나의 노드로만 표현.
-2. Unfolded graph: 각 기능들이 각각의 노드로 표현. Unfolded 표현은 sequence 길이와 연관된 크기를 가진다.</p>
+<p>RNN을 그림으로 묘사하는 두가지 방법이 있다.</p>
 
-<p>Unfolding 과정은 다음과 같은 장점을 지닌다.
-- sequence 길이와 상관없이, 학습된 모델은 항상 같은 입력 크기를 가진다.
-- 같은 파라미터를 사용하는 전이 함수 (transition function) $$$f$$$ 를 사용할 수 있다.</p>
+<ol>
+<li><code>Folded graph</code>: 모든 기능을 하나의 노드로만 표현.</li>
+<li><code>Unfolded graph</code>: 각 기능들이 각각의 노드로 표현. Unfolded 표현은 sequence 길이와 연관된 크기를 가진다.</li>
+</ol>
 
-<p>이 두가지 요인 때문에, 각 시점마다 $$$g^{(t)}$$$ 를 개별적으로 학습시키지 않아도 된다. 같은 파리미터가 공유되기 때문에, 단일 모델 $$$f$$$ 가 모든 sequence 길이와 모든 시점에서 동작한다.</p>
+<p>Unfolding 과정은 다음과 같은 장점을 지닌다.</p>
 
-<p>단일화, 공유되는 모델 학습은 일반화를 가능하게 한다.
-1. 학습 데이터상의 sequence 길이에 무관하다.
-2. 적은 학습 데이터로도 예측이 가능하다.</p>
+<ul>
+<li>sequence 길이와 상관없이, 학습된 모델은 항상 같은 입력 크기를 가진다.</li>
+<li>같은 파라미터를 사용하는 전이 함수 (transition function) $f$ 를 사용할 수 있다.</li>
+</ul>
 
-<p>두가지 RNN 표현법은 다음과 같이 각자의 용도가 있다.
-1. Folded (recurrent graph)
- - 간단명료하다.
-2. Unfolded graph
- - 각 단계에서 계산 수행을 분명하게 기술한다.
- - 진행 방향에 따라 아이디어를 묘사하기 쉽다.
- - 정보의 흐름 (Forward): output과 loss의 계산
- - 정보의 흐름 (Backward): gradient 계산</p>
+<p>이 두가지 요인 때문에, 각 시점마다 $g^{(t)}$ 를 개별적으로 학습시키지 않아도 된다. 같은 파리미터가 공유되기 때문에, 단일 모델 $f$ 가 모든 sequence 길이와 모든 시점에서 동작한다.</p>
+
+<p>단일화, 공유되는 모델 학습은 일반화를 가능하게 한다.</p>
+
+<ol>
+<li>학습 데이터상의 sequence 길이에 무관하다.</li>
+<li>적은 학습 데이터로도 예측이 가능하다.</li>
+</ol>
+
+<p>두가지 RNN 표현법은 다음과 같이 각자의 용도가 있다.</p>
+
+<ol>
+<li><code>Folded (recurrent graph)</code>
+
+<ul>
+<li>간단명료하다.</li>
+</ul></li>
+<li><code>Unfolded graph</code>
+
+<ul>
+<li>각 단계에서 계산 수행을 분명하게 기술한다.</li>
+<li>진행 방향에 따라 아이디어를 묘사하기 쉽다.</li>
+<li>정보의 흐름 (Forward): output과 loss의 계산</li>
+<li>정보의 흐름 (Backward): gradient 계산</li>
+</ul></li>
+</ol>
 
         </div>
     </article>
