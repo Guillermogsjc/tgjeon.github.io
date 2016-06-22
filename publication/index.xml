@@ -7,8 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Fri, 15 Jan 2016 01:26:13 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jun 2016 10:44:05 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Robust Physiological Signal Analysis: Design and Applications with Machine Learning</title>
+      <link>https://tgjeon.github.io/publication/robust-physiological-signal-analysis/</link>
+      <pubDate>Wed, 22 Jun 2016 10:44:05 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/publication/robust-physiological-signal-analysis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Robust Detection of Heart Beats using Association Models from BP and EEG signals</title>
@@ -133,15 +142,6 @@
       <pubDate>Fri, 30 May 2008 09:58:20 +0900</pubDate>
       
       <guid>https://tgjeon.github.io/publication/probability_model_based_multicasting_routing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Efficient Image Segmentation Method in Multi-Core Processor Environments</title>
-      <link>https://tgjeon.github.io/publication/efficient_image_segmentation/</link>
-      <pubDate>Wed, 20 Feb 2008 09:52:31 +0900</pubDate>
-      
-      <guid>https://tgjeon.github.io/publication/efficient_image_segmentation/</guid>
       <description></description>
     </item>
     
