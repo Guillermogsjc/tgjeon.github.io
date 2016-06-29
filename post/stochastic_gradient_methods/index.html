@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.15" />
+    <meta name="author" content="Taegyun Jeon">
+    <meta name="description" content="Research Scientist in Machine Learning and Biomedical Engineering">
+
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://tgjeon.github.io/css/hugo-academic.css">
+    
+
+
+    <link rel="shortcut icon" href="https://tgjeon.github.io/img/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://tgjeon.github.io/post/stochastic_gradient_methods/">
+
+    <title>Stochastic Gradient Methods | Taegyun Jeon</title>
+
+</head>
+<body id="top">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://tgjeon.github.io/">Taegyun Jeon</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#top">Home</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#publications">Publications</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#posts">Posts</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#projects">Projects</a></li>
+                
+                <li class="nav-item"><a href="https://tgjeon.github.io/#contact">Contact</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+        <h1 itemprop="name">Stochastic Gradient Methods</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-06-29 10:49:16 &#43;0900 KST" itemprop="datePublished">Wed, Jun 29, 2016</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://tgjeon.github.io/tags/deep-learning">Deep Learning</a>, 
+        
+        <a class="article-tag-link" href="https://tgjeon.github.io/tags/gradient-methods">Gradient Methods</a>
+        
+    </span>
+    
+    
+
+    
+        
+<ul class="share">
+    <li>
+        <a class="facebook" href="https://www.facebook.com/sharer.php?u=" target="_blank">
+            <i class="fa fa-facebook-square"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+    </li>
+    <li>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=&amp;url=" target="_blank">
+            <i class="fa fa-twitter-square"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+    </li>
+    <li>
+        <a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=" target="_blank">
+            <i class="fa fa-linkedin-square"></i>
+            <span class="hidden">LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a class="email" href="mailto:?subject=&amp;body=">
+            <i class="fa fa-envelope-square"></i>
+            <span class="hidden">Email</span>
+        </a>
+    </li>
+</ul>
+
+
+    
+
+</div>
+
+
+        <div class="post" itemprop="articleBody">
+            
+
+<h1 id="stochastic-gradient-methods-for-large-scale-machine-learning-part-1:d651e37548ed21cc65094b1e7112d7f5">Stochastic Gradient Methods for Large-Scale Machine Learning (Part 1)</h1>
+
+<blockquote>
+<p>Original presentation materials: <a href="http://www.icml.cc/tutorials/part-1.pdf">Part1</a>, <a href="http://www.icml.cc/tutorials/part-2.pdf">Part2</a>, <a href="http://www.icml.cc/tutorials/part-3.pdf">Part3</a> is written by Leon Bottou (Facebook AI Research), Frank E. Curtis (Lehigh University), and Jorge Nocedal (Northwestern University).</p>
+</blockquote>
+
+<p>이 포스트는 ICML 2016 Tutorial 중 &ldquo;Stochastic Gradient Methods for Large-Scale Machine Learning&rdquo; 의 내용을 한글로 정리한 포스트입니다. 해당 발표자료는 위 링크를 참고하여 확인하시기 바랍니다. 원 튜토리얼 자료와 같이 보시는 것을 권합니다.</p>
+
+<p>해당 튜토리얼은 <a href="http://arxiv.org/abs/1606.04838">&ldquo;Optimization Methods for Large-Scale Machine Learning&rdquo;</a>, L. Bottou, F.E. Curtis, J. Nocedal, Prepared for SIAM Review 논문을 요약한 내용이라고 합니다. 다 자세한 내용을 보고싶으신 분은 위 논문을 참고하시기 바랍니다.</p>
+
+<hr />
+
+<h2 id="튜토리얼의-목표:d651e37548ed21cc65094b1e7112d7f5">튜토리얼의 목표</h2>
+
+<ol>
+<li>Stochastic gradient (SG) 방법에 대해 알아본다.</li>
+<li>SG는 왜 중요해질까?</li>
+<li>핵심 매커니즘은 무엇인가?</li>
+<li>convex와 non-convex의 경우에 어떻게 행동한다고 할수 있는가?</li>
+<li>SG를 향상 시키기위해서 어떤 노력들이 있었는가?</li>
+</ol>
+
+<h2 id="튜토리얼의-구성:d651e37548ed21cc65094b1e7112d7f5">튜토리얼의 구성</h2>
+
+<ol>
+<li>Motivation for the stochastic gradient (SG) method</li>
+<li>Analysis of SG</li>
+<li>Beyond SG</li>
+</ol>
+
+<h3 id="문제-정의-problem-statement:d651e37548ed21cc65094b1e7112d7f5">문제 정의 (Problem statement)</h3>
+
+<ul>
+<li>학습 데이터가 주어집니다. training set: $ {(x_1, y_1), &hellip;, (x_n, y_n)} $</li>
+<li>손실 함수가 주어집니다. loss function: $ \ell(h,y) $
+
+<ul>
+<li>여기서 우리의 예측이 실제 학습 데이터의 label인 $y$와 얼마나 다른지 측정합니다.</li>
+</ul></li>
+<li>예측 함수는 $h(x;w)$ 입니다.
+
+<ul>
+<li>$x$는 입력 데이터 (input data), $w$는 학습 모델의 가중치 (weights of model) 입니다. 모델 $w$가 입력 $x$을 받아 예측 결과 $\hat {y}$를 출력으로 나타냅니다.</li>
+</ul></li>
+</ul>
+
+<p>여기서 우리의 목표는 가장 최선의 예측을 하는 것입니다. 주어진 학습 데이터에 대해 예측 손실을 최소화하는 모델을 만들어서 이 목표를 달성하고자 합니다. 하나의 수식으로 표현하면 아래와 같습니다.</p>
+
+<ul>
+<li>$ \min _{w}{\frac {1}{n} \sum _{i=1}^{n}{\ell(h(x_i; w), y_i)} } $</li>
+</ul>
+
+<p>모든 학습 데이터에 대해 예측을 하고, 각 학습 데이터에 대한 예측이 학습 데이터의 label인 $y$와 차이가 적게 나타도록 하는 $w$가 우리의 학습 모델이 됩니다. 충분한 학습 데이터는 경험이라고 표현 할 수 있습니다. 우리의 학습 모델이 얼마나 큰 위험 요소 (Risk)를 가지고 있는지 표현해봅시다. 여기서 $f$는 손실 함수 (loss function) 입니다. 경험적 위험요소 (empirical risk)는 아래와 같이 표현됩니다. 각 학습 데이터 마다 loss를 계산해서 평균내어 risk로 나타냅니다.</p>
+
+<ul>
+<li>empirical risk: $R_n(w) = \frac{1}{n} \sum _{i=1}^{n}{f_i(w)}$</li>
+</ul>
+
+<p>데이터가 충분히 모였다면 데이터에 대한 확률 분포가 존재합니다. 이 때, 우리의 학습 데이터를 랜덤 변수 $\xi=(x_i, y_i)$ 로 표현합니다. 그렇다면 위험요소 (risk)는 기대값으로 나타낼 수 있습니다.</p>
+
+<ul>
+<li>expected risk: $R(w) = E[f(w;x_i)] $</li>
+</ul>
+
+<h3 id="stochastic-gradient-method-vs-batch-gradient-method:d651e37548ed21cc65094b1e7112d7f5">Stochastic Gradient Method vs Batch Gradient Method</h3>
+
+<p>이전에 표현했던 empirical risk minimization을 살펴봅시다.</p>
+
+<ul>
+<li>empirical risk: $R_n(w) = \frac{1}{n} \sum _{i=1}^{n}{f_i(w)}$</li>
+</ul>
+
+<p>데이터를 하나씩 관찰하면서, 모델의 가중치는 아래와 같은 수식을 통해 변화됩니다.</p>
+
+<ul>
+<li>weight update: $w_{k+1} = w_k - \alpha_k \nabla f_i(w_k),$ where $i \in$ {$1,&hellip;,n$} choose at random
+
+<ul>
+<li>단순 반복을 통해 가능합니다. 데이터 1개씩만 보고 변화율 (gradient)을 변경합니다.</li>
+<li>i번째 데이터를 고르는 순서에 따라 확률 과정 (stochastic process)이 결정됩니다.</li>
+<li>gradient descent method가 아닙니다.</li>
+</ul></li>
+</ul>
+
+<p>Reference:</p>
+
+<ul>
+<li><a href="https://projecteuclid.org/euclid.aoms/1177729586">[Robibins-Monro&rsquo;51]</a>: H. Robbins and S. Monro. A Stochastic Approximation Method. Ann. Math. Statist. 22 (1951), no. 3, 400&ndash;407.</li>
+</ul>
+
+<p>그렇다면, batch gradient method로 넘어가봅시다. 일정 묶음의 수만큼 데이터를 확인하고, loss를 계산하여 risk를 모델 가중치 변화에 적용 시킵니다.</p>
+
+<ul>
+<li>batch gradient method: $w_{k+1} = w_k - \alpha_k \nabla R_n(w_k)$</li>
+<li>$w_{k+1} = w_k - \frac {\alpha_k}{n} \sum _{i=1}^{n}{\nabla f_i(w_k)}$
+
+<ul>
+<li>계산량이 늘어나게 됩니다.</li>
+<li>다양한 최적화 알고리즘을 선택하여 사용할 수 있습니다.</li>
+<li>각 배치 별로 병렬처리가 가능해집니다.</li>
+</ul></li>
+</ul>
+
+<p>그럼 왜 stochastic gradient (SG) 기법이 더 탁월하다고 볼 수 있을까요? <strong>여기서 Risk ($R$)를 최적하 하기 위한 stochastic 기법과 batch 기법의 계산량의 상호보완적인 내용을 짚고 넘어가야 합니다.</strong></p>
+
+<h3 id="sg-bg:d651e37548ed21cc65094b1e7112d7f5">SG &gt; BG</h3>
+
+<p>stochastic gradient (SG) 기법은 batch 기법보다 더 효율적입니다.</p>
+
+<ul>
+<li>생각해 볼 문제 #1
+
+<ul>
+<li>만약 집합 S의 10개의 복사본으로 데이터가 구성된다면,</li>
+<li>batch 기법으로 수행한다면 SG 기법의 경우보다 10배의 계산량이 요구됩니다.</li>
+</ul></li>
+<li>생각해 볼 문제 #2
+
+<ul>
+<li>데이터를 구성할 때, training set (40%), test set (30%), validation set (30%) 식으로 보통 구성합니다.</li>
+<li>20%, 10%, 혹은 1% 이런식의 구성은 의미가 없을까요?</li>
+</ul></li>
+</ul>
+
+<p><a href="http://www.icml.cc/tutorials/part-1.pdf">Part1</a>, slide#9를 보면 LBFGS와 SGD의 실질적인 비교 결과를 볼 수 있습니다.</p>
+
+<p>LBFGS (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) algorithm:</p>
+
+<ul>
+<li>quasi-newton method와 유사한 최적화 기법입니다.</li>
+<li>제한된 메모리를 가진 컴퓨터에서 Broyden-Fletcher-Goldfarb-Shanno (BFGS) 알고리즘을 근사화 (approximation)시킨 기법입니다.</li>
+<li>기계 학습에서 파라미터 추정 (parameter estimation)에서 많이 쓰입니다.</li>
+</ul>
+
+<p>Slide#9에서, 초기 과정에서 SGD가 LBFGS보다 월등히 빠르게 수렴하는 것을 확인 할 수 있습니다.</p>
+
+<p>Slide#10에서는 Quadratic One-Dimensional example을 소개하고 있습니다.</p>
+
+<ul>
+<li>$ \min _{x \in \Re}\sum _{i=1}^{m} {(a_i x - b_i)}^{2} $</li>
+</ul>
+
+<p>위 예제에서 처럼 혼동되는 구역 (region of confusion)에서 2차식을 임의로 찾아서 목표로 하는 리스크 감소가 가능 할까요?</p>
+
+        </div>
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://tgjeon.github.io/post/rnn_unfolding_computational_graph/"><span aria-hidden="true">&larr;</span> Unfolding Computational Graphs</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'tgjeon';
+    var disqus_identifier = 'https:\/\/tgjeon.github.io\/post\/stochastic_gradient_methods\/';
+    var disqus_title = 'Stochastic Gradient Methods';
+    var disqus_url = 'https:\/\/tgjeon.github.io\/post\/stochastic_gradient_methods\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 Taegyun Jeon &middot; 
+
+            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://tgjeon.github.io/js/jquery-1.12.3.min.js"></script>
+        <script src="https://tgjeon.github.io/js/bootstrap.min.js"></script>
+        <script src="https://tgjeon.github.io/js/hugo-academic.js"></script>
+        
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){
+                i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
+                    i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+                m.parentNode.insertBefore(a,m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-77919576-1', 'auto');
+            ga('set', 'anonymizeIp', true);
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+        </script>
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+
+    </body>
+</html>
+
