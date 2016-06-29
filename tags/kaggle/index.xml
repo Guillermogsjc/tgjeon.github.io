@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cnn on Taegyun Jeon</title>
-    <link>https://tgjeon.github.io/tags/cnn/</link>
-    <description>Recent content in Cnn on Taegyun Jeon</description>
+    <title>Kaggle on Taegyun Jeon</title>
+    <link>https://tgjeon.github.io/tags/kaggle/</link>
+    <description>Recent content in Kaggle on Taegyun Jeon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
     <lastBuildDate>Wed, 04 May 2016 10:29:55 +0900</lastBuildDate>
-    <atom:link href="https://tgjeon.github.io/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tgjeon.github.io/tags/kaggle/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>[kaggle] Digit Recognizer using Convolutional Neural Networks for MNIST dataset</title>
