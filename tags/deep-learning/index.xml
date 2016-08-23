@@ -7,8 +7,53 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Tue, 05 Jul 2016 05:33:52 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Aug 2016 12:54:32 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RNNs in Tensorflow, A Practical Guide and Undocumented Features</title>
+      <link>https://tgjeon.github.io/post/rnns-in-tensorflow/</link>
+      <pubDate>Tue, 23 Aug 2016 12:54:32 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/post/rnns-in-tensorflow/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.wildml.com/2016/08/rnns-in-tensorflow-a-practical-guide-and-undocumented-features/&#34;&gt;Original post&lt;/a&gt; is written by Denny Britz (Google Brain team).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 포스트는 위 내용을 한글로 정리한 내용입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;이전 &lt;a href=&#34;http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/&#34;&gt;튜토리얼&lt;/a&gt;에서, Recurrent Neural Networks (RNNs)에 대한 이론들에 대해서 살펴보고, 간단한 RNN을 기초부터 만들어보는 과정을 진행했습니다. 이 과정들은 유용했지만, 현업에선 RNNs에 대한 고수준의 기초요소들을 제공하는 Tensorflow와 같이 라이브러리를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;RNNs을 함수 호출해서 사용하는 것처럼 쉽게 쓰면 좋겠지만, 현실은 만만치 않습니다. 이번 포스트에서는 Tensorflow를 이용하여 RNNs을 실질적으로 동작시켜보고, 특히 공식 사이트에서 문서화 되지 않은 기능들에 대해 다뤄보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;본 포스트는 Jupyer 노트북이 포함된 Github 저장소에 아래와 같은 예제들을 다루고 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/sequence_example.ipynb&#34;&gt;tf.SequenceExample 사용하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/batching_padding.ipynb&#34;&gt;Batching과 Padding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/dynamic_rnn.ipynb&#34;&gt;Dynamic RNN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/bidirectional_rnn.ipynb&#34;&gt;Bidirectional Dynamic RNN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/rnn_cell_wrappers.py.ipynb&#34;&gt;RNN Cells과 Cell Wrappers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/loss_masking.py.ipynb&#34;&gt;Masking the Loss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;데이터-전처리-tf-sequenceexample-사용하기&#34;&gt;데이터 전처리: tf.SequenceExample 사용하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/sequence_example.ipynb&#34;&gt;tf.SequenceExample 주피터 노트북을 확인하세요!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;RNNs은 순차적인 데이터를 사용하며, 이 순차적인 데이터는 입력과 출력을 여러 시간 스텝으로 구성되어 있습니다. Tensorflow는 순차적 데이터: &lt;a href=&#34;https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/example/example.proto&#34;&gt;tf.SequenceExample&lt;/a&gt; 를 다루기 위해 &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;프로토콜 버퍼&lt;/a&gt;가 정의되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;사용자는 Python/Numpy 배열로부터 직접 데이터를 불러올 수 있습니다. 하지만, &lt;code&gt;tf.SequenceExample&lt;/code&gt;가 더 관심 대상이므로 이것을 사용해보도록 합시다. 이 자료 구조는 비순차적 특징 (non-sequential features)은 &lt;code&gt;&amp;quot;context&amp;quot;&lt;/code&gt;로, 순차적 특징 (sequential features)은 &lt;code&gt;&amp;quot;feature_lists&amp;quot;&lt;/code&gt;로 구성됩니다. 장황하긴 하지만, 이것이 주는 장점은 아래와 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;rdquo;&amp;ldquo;쉬운 &lt;a href=&#34;https://www.tensorflow.org/versions/r0.10/how_tos/distributed/index.html#distributed-tensorflow&#34;&gt;분산 학습&lt;/a&gt;&amp;rdquo;&amp;rdquo;:&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Recurrent Neural Networks</title>

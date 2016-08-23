@@ -19,9 +19,9 @@
 
 
     <link rel="shortcut icon" href="https://tgjeon.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://tgjeon.github.io/post/rnn_rnn/">
+    <link rel="canonical" href="https://tgjeon.github.io/post/rnns-in-tensorflow/">
 
-    <title>Recurrent Neural Networks | Taegyun Jeon</title>
+    <title>RNNs in Tensorflow, A Practical Guide and Undocumented Features | Taegyun Jeon</title>
 
 </head>
 <body id="top">
@@ -66,14 +66,14 @@
 <div class="container">
 
     <article class="article" itemscope itemtype="http://schema.org/Article">
-        <h1 itemprop="name">Recurrent Neural Networks</h1>
+        <h1 itemprop="name">RNNs in Tensorflow, A Practical Guide and Undocumented Features</h1>
 
         
 
 <div class="article-metadata">
 
     <span class="article-date">
-        <time datetime="2016-07-05 05:33:52 &#43;0900 KST" itemprop="datePublished">Tue, Jul 5, 2016</time>
+        <time datetime="2016-08-23 12:54:32 &#43;0900 KST" itemprop="datePublished">Tue, Aug 23, 2016</time>
     </span>
 
     
@@ -130,87 +130,40 @@
         <div class="post" itemprop="articleBody">
             
 
-<h3 id="chapter-10-sequence-modeling-recurrent-and-recursive-nets">Chapter 10. Sequence Modeling: Recurrent and Recursive Nets</h3>
-
 <blockquote>
-<p><a href="http://www.deeplearningbook.org">Original book chapter</a> is written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.</p>
+<p><a href="http://www.wildml.com/2016/08/rnns-in-tensorflow-a-practical-guide-and-undocumented-features/">Original post</a> is written by Denny Britz (Google Brain team).</p>
 </blockquote>
 
-<p>이 포스트는 &ldquo;Deep Learning published by Mit Press (2016)&rdquo; 의 Recurrent Neural Networks에 해당되는 내용을 한글로 정리한 내용입니다. 해당 그림은 저작권 문제로 위 링크를 참고하여 확인하시기 바랍니다.</p>
+<p>이 포스트는 위 내용을 한글로 정리한 내용입니다.</p>
 
 <hr />
 
-<h3 id="10-2-recurrent-neural-networks-rnns">10.2 Recurrent Neural Networks (RNNs)</h3>
+<p>이전 <a href="http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/">튜토리얼</a>에서, Recurrent Neural Networks (RNNs)에 대한 이론들에 대해서 살펴보고, 간단한 RNN을 기초부터 만들어보는 과정을 진행했습니다. 이 과정들은 유용했지만, 현업에선 RNNs에 대한 고수준의 기초요소들을 제공하는 Tensorflow와 같이 라이브러리를 사용합니다.</p>
 
-<p>앞선 <a href="https://tgjeon.github.io/post/rnn_unfolding_computational_graph/">포스트</a>에서 설명한 그래프 풀기 (graph unrolling)과 파라미터 공유 (parameter sharing)을 통해 다양한 형태의 recurrent neural networks를 디자인 할 수 있다.</p>
+<p>RNNs을 함수 호출해서 사용하는 것처럼 쉽게 쓰면 좋겠지만, 현실은 만만치 않습니다. 이번 포스트에서는 Tensorflow를 이용하여 RNNs을 실질적으로 동작시켜보고, 특히 공식 사이트에서 문서화 되지 않은 기능들에 대해 다뤄보도록 하겠습니다.</p>
 
-<p>Recurrent Neural Networks의 중요한 디자인 패턴들은 다음과 같다.</p>
-
-<ol>
-<li>그림 10.3
+<p>본 포스트는 Jupyer 노트북이 포함된 Github 저장소에 아래와 같은 예제들을 다루고 있습니다.</p>
 
 <ul>
-<li>Input (매 시점 t 마다), Output (매 시점 t 마다), Hidden (hidden unit간 연결)</li>
-<li>$(x, h), (h, o), (o, L), (L, y), (h^{t-1}, h^t)$  (여기서 (a, b)는 a와 b가 연결됨을 의미)</li>
-</ul></li>
-<li>그림 10.4
-
-<ul>
-<li>Input (매 시점 t 마다), Output (매 시점 t 마다), Hidden-Output (hidden/output unit간 연결)</li>
-<li>$(x, h), (h, o), (o, L), (L, y), (o^{t-1}, h^t)$  (여기서 (a, b)는 a와 b가 연결됨을 의미)</li>
-</ul></li>
-<li>그림 10.5
-
-<ul>
-<li>Input (매 시점 t 마다), Output (최종 시점 $\tau$에만), Hidden (hidden unit간 연결)</li>
-<li>$(x, h), (h^{\tau}, o^{\tau}), (o^\tau, L^\tau), (L^\tau, y^\tau)$ (여기서 (a, b)는 a와 b가 연결됨을 의미)</li>
-</ul></li>
-</ol>
-
-<p>처음 소개된 그림 10.3과 같은 형태는, recurrent neural networks의 가장 대표적인 형태이며, 이번 내용에서 가장 많이 설명될 것이다. 이와 같은 형태는 Turing machine과 같은 계산 과정을 통해 수행된다고 생각하면 된다. 시점 $t$의 갯수 (점근적 선형으로 증가하는) 만큼의 입력을 받아 해당 시점 이후의 출력을 가진다. 이는 근사치가 아닌 정확한 계산 결과이며 이산값으로 나타낸다.</p>
-
-<p>그림 10.3에서 동작하는 forward propagation 수식을 살펴보자. 개념적인 이야기를 다루고 있기 때문에, activation function, loss function, output 형태를 언급하지 않고 있다. 따라서, activation function은 $\tanh$로 두고 output은 discrete 값을 가정한다. 그리고 RNN 모델은 단어나 문자를 예측하는데 사용된다고 가정하자.</p>
-
-<ul>
-<li>output $o$는 각 이산값에 대해 정규화되지 않은 확률 분포로 나타낸다.</li>
-<li>최종 예측값은 $\hat{y}$는 출력 $o$에 대해 softmax()를 적용하여 정규화된 확률 값을 가진다.</li>
+<li><a href="https://github.com/dennybritz/tf-rnn/blob/master/sequence_example.ipynb">tf.SequenceExample 사용하기</a></li>
+<li><a href="https://github.com/dennybritz/tf-rnn/blob/master/batching_padding.ipynb">Batching과 Padding</a></li>
+<li><a href="https://github.com/dennybritz/tf-rnn/blob/master/dynamic_rnn.ipynb">Dynamic RNN</a></li>
+<li><a href="https://github.com/dennybritz/tf-rnn/blob/master/bidirectional_rnn.ipynb">Bidirectional Dynamic RNN</a></li>
+<li><a href="https://github.com/dennybritz/tf-rnn/blob/master/rnn_cell_wrappers.py.ipynb">RNN Cells과 Cell Wrappers</a></li>
+<li><a href="https://github.com/dennybritz/tf-rnn/blob/master/loss_masking.py.ipynb">Masking the Loss</a></li>
 </ul>
 
-<p>Forward propagation은 다음과 같이 동작한다.</p>
+<h3 id="데이터-전처리-tf-sequenceexample-사용하기">데이터 전처리: tf.SequenceExample 사용하기</h3>
+
+<p><a href="https://github.com/dennybritz/tf-rnn/blob/master/sequence_example.ipynb">tf.SequenceExample 주피터 노트북을 확인하세요!</a></p>
+
+<p>RNNs은 순차적인 데이터를 사용하며, 이 순차적인 데이터는 입력과 출력을 여러 시간 스텝으로 구성되어 있습니다. Tensorflow는 순차적 데이터: <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/example/example.proto">tf.SequenceExample</a> 를 다루기 위해 <a href="https://developers.google.com/protocol-buffers/">프로토콜 버퍼</a>가 정의되어 있습니다.</p>
+
+<p>사용자는 Python/Numpy 배열로부터 직접 데이터를 불러올 수 있습니다. 하지만, <code>tf.SequenceExample</code>가 더 관심 대상이므로 이것을 사용해보도록 합시다. 이 자료 구조는 비순차적 특징 (non-sequential features)은 <code>&quot;context&quot;</code>로, 순차적 특징 (sequential features)은 <code>&quot;feature_lists&quot;</code>로 구성됩니다. 장황하긴 하지만, 이것이 주는 장점은 아래와 같습니다.</p>
 
 <ul>
-<li>Initial state: $h^{(0)}$로 부터 시작.</li>
-<li>Input-to-hidden ($U$)과 hidden-to-hidden ($W$): $a^{(t)} = b + Wh^{(t-1)} + Ux^{(t)}$</li>
-<li>Activation: $h^{(t)} = \tanh(a^{(t)})$</li>
-<li>hidden-to-output ($V$): $o^{(t)} = c + Vh^{(t)}$</li>
-<li>Normailized discrete output: ${\hat{y}}^{(t)} = softmax(o^{(t)})$</li>
+<li>&rdquo;&ldquo;쉬운 <a href="https://www.tensorflow.org/versions/r0.10/how_tos/distributed/index.html#distributed-tensorflow">분산 학습</a>&rdquo;&rdquo;:<br /></li>
 </ul>
-
-<p>이 모델은 입력 sequence와 출력 sequence의 길이가 동일하다. 전체 입,출력 sequence에 대한 loss는 각 시점 (time steps)마다의 loss를 모두 더한 것과 같다.</p>
-
-<p>$ L(${ $x^{(1)}, &hellip;, x^{(\tau)} $}, { $y{(1)}, &hellip;, y^{(\tau)} $}$)$</p>
-
-<p>$= \sum _{t}{L^{(t)}} $</p>
-
-<p>$= -\sum _{t}{\log{p}} _{model} (y^{(t)} | ${ $x^{(1)}, &hellip;, x^{(t)} $}$)$</p>
-
-<p>$L^{(t)} $가 입력 $x^{(1)}, &hellip;, x^{(t)}$이 주어졌을 때, 출력 $y^{(t)}$에 대한 negative log-likelihood라고 하자.
-gradient를 계산하는 과정은 각 시점 (time steps)에 대해 수행된다. 수행 시간은 $O(\tau)$이며, 병렬처리가 불가능하다.
-이 모델은 강력하지만 학습 과정에서 많은 계산량을 요구한다. 이를 <em>back-propagation through time</em> 혹은 <em>BPTT</em> 라고 한다.</p>
-
-<h3 id="10-2-1-teacher-forcing-and-networks-with-output-recurrence">10.2.1 Teacher Forcing and Networks with Output Recurrence</h3>
-
-<p>그림 10.4에서 보여주고 있는 RNN모델은 hidden-to-hidden 연결성이 부족하기 때문에 강력하지 않다. hidden-to-hidden 연결이 없기 때문에, output 유닛이 과거 네트워크의 모든 정보를 가지고 미래를 예측해야한다. 그래서, output 유닛은 명백하게 학습 데이터의 타겟에 대해 학습된다. 사용자는 과거 모든 입력의 기록을 모아둘 필요가 없어진다.</p>
-
-<p>hidden-to-hidden 연결을 제거함으로 얻는 이득은, 시점 $t$에서 예측하는 데 필요한 loss의 계산이 모든 시점 $t$에 대한 관계성이 없어진다. 따라서 학습 단계는 병렬처리 가능하며, 각 시점 $t$에서의 gradient 계산은 독립적으로 수행 가능하다.</p>
-
-<p>output에서 바로 모델이 학습 하는 경우를 teacher forcing 이라고 한다. 이는 maximum likelihood criterion을 따르며, ground truth $\hat(y)^{(t)}$가 $t+1$ 시점의 입력으로 사용된다는 것을 의미한다.</p>
-
-<p>두 시점의 sequence를 예를 들어보면, conditional maximum likelihood criterion은 다음과 같다.</p>
-
-<p>$ \log{p} (y^{(1)}, y^{(2)} | x^{(1)}, x^{(2)})$</p>
-
-<p>$ = \log{p} (y^{(2)} | y^{(1)}, x^{(1)}, x^{(2)})  +  \log{p} (y^{(1)} | x^{(1)}, x^{(2)}) $</p>
 
         </div>
     </article>
@@ -218,11 +171,9 @@ gradient를 계산하는 과정은 각 시점 (time steps)에 대해 수행된�
     <nav>
     <ul class="pager">
         
-        <li class="previous"><a href="https://tgjeon.github.io/post/stochastic_gradient_methods/"><span aria-hidden="true">&larr;</span> Stochastic Gradient Methods</a></li>
+        <li class="previous"><a href="https://tgjeon.github.io/post/rnn_rnn/"><span aria-hidden="true">&larr;</span> Recurrent Neural Networks</a></li>
         
 
-        
-        <li class="next"><a href="https://tgjeon.github.io/post/rnns-in-tensorflow/">RNNs in Tensorflow, A Practical Guide and Undocumented Features <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>
@@ -233,9 +184,9 @@ gradient를 계산하는 과정은 각 시점 (time steps)에 대해 수행된�
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'tgjeon';
-    var disqus_identifier = 'https:\/\/tgjeon.github.io\/post\/rnn_rnn\/';
-    var disqus_title = 'Recurrent Neural Networks';
-    var disqus_url = 'https:\/\/tgjeon.github.io\/post\/rnn_rnn\/';
+    var disqus_identifier = 'https:\/\/tgjeon.github.io\/post\/rnns-in-tensorflow\/';
+    var disqus_title = 'RNNs in Tensorflow, A Practical Guide and Undocumented Features';
+    var disqus_url = 'https:\/\/tgjeon.github.io\/post\/rnns-in-tensorflow\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
