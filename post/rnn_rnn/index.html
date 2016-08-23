@@ -19,9 +19,9 @@
 
 
     <link rel="shortcut icon" href="https://tgjeon.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://tgjeon.github.io/post/rnn_unfolding_computational_graph/">
+    <link rel="canonical" href="https://tgjeon.github.io/post/rnn_rnn/">
 
-    <title>Unfolding Computational Graphs | Taegyun Jeon</title>
+    <title>Recurrent Neural Networks | Taegyun Jeon</title>
 
 </head>
 <body id="top">
@@ -66,14 +66,14 @@
 <div class="container">
 
     <article class="article" itemscope itemtype="http://schema.org/Article">
-        <h1 itemprop="name">Unfolding Computational Graphs</h1>
+        <h1 itemprop="name">Recurrent Neural Networks</h1>
 
         
 
 <div class="article-metadata">
 
     <span class="article-date">
-        <time datetime="2016-06-02 00:59:05 &#43;0900 KST" itemprop="datePublished">Thu, Jun 2, 2016</time>
+        <time datetime="2016-07-05 05:33:52 &#43;0900 KST" itemprop="datePublished">Tue, Jul 5, 2016</time>
     </span>
 
     
@@ -140,70 +140,77 @@
 
 <hr />
 
-<h3 id="10-1-unfolding-computational-graphs">10.1 Unfolding Computational Graphs</h3>
+<h3 id="10-2-recurrent-neural-networks-rnns">10.2 Recurrent Neural Networks (RNNs)</h3>
 
-<ul>
-<li><p><strong>Classical Dynamic System</strong>:
-$ S^{ (t) }=f(s^{ (t-1) };\theta ) $, 여기서 $s^{(t)}$ 는 시스템의 상태를 나타낸다.</p></li>
+<p>앞선 <a href="https://tgjeon.github.io/post/rnn_unfolding_computational_graph/">포스트</a>에서 설명한 그래프 풀기 (graph unrolling)과 파라미터 공유 (parameter sharing)을 통해 다양한 형태의 recurrent neural networks를 디자인 할 수 있다.</p>
 
-<li><p><strong>Dynamical system driven by an external signal</strong> $ x^{(t)} $:
-$ S^{ (t) }=f(s^{ (t-1) }, x^{(t)} ;\theta ) $</p></li>
-</ul>
-
-<p>Recurrent Neural Networks (RNN) 은 다양한 방법으로 만들수 있다. 대부분은 feedforward neural network로 간주되며, recurrence (재귀표현)를 포함하고 있다면 Recurrent Neural Networks (RNN) 이라고 할 수 있다.</p>
-
-<p>앞서 나온 <strong>Dynamical System</strong> 식을 이용해, 다음과 같이 유사한 형태의 식으로 RNN의 hidden unit을 정의한다.
-$$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$</p>
-
-<p>예를 들어, RNN이 과거 데이터를 학습하고, 미래를 예측하는 일을 수행한다고 하자.</p>
-
-<ul>
-<li>입력: $ x^{(t)}$ (시점 $t$ 까지의 입력)</li>
-<li>종합: $ h^{(t)}$ (정보 손실이 있는 종합된 내용)</li>
-</ul>
-
-<p>이 과정을 통해 과거 정보에서 선택적으로 필요한 정보만 유지하여 종합한다. 예를 들어, RNN이 통계적 언어 모델링을 통해, 과거의 단어들을 바탕으로 다음에 나올 단어를 예측한다. 이를 위해, 시점 (time step) $t$ 까지 모든 입력을 다 기억할 필요는 없다. 일정한 정보만으로도 문장의 나머지 단어들을 예측하기에 충분하다.</p>
-
-<p>RNN을 그림으로 묘사하는 두가지 방법이 있다.</p>
+<p>Recurrent Neural Networks의 중요한 디자인 패턴들은 다음과 같다.</p>
 
 <ol>
-<li><code>Folded graph</code>: 모든 기능을 하나의 노드로만 표현.</li>
-<li><code>Unfolded graph</code>: 각 기능들이 각각의 노드로 표현. Unfolded 표현은 sequence 길이와 연관된 크기를 가진다.</li>
-</ol>
-
-<p>Unfolding 과정은 다음과 같은 장점을 지닌다.</p>
+<li>그림 10.3
 
 <ul>
-<li>sequence 길이와 상관없이, 학습된 모델은 항상 같은 입력 크기를 가진다.</li>
-<li>같은 파라미터를 사용하는 전이 함수 (transition function) $f$ 를 사용할 수 있다.</li>
-</ul>
-
-<p>이 두가지 요인 때문에, 각 시점마다 $g^{(t)}$ 를 개별적으로 학습시키지 않아도 된다. 같은 파리미터가 공유되기 때문에, 단일 모델 $f$ 가 모든 sequence 길이와 모든 시점에서 동작한다.</p>
-
-<p>단일화, 공유되는 모델 학습은 일반화를 가능하게 한다.</p>
-
-<ol>
-<li>학습 데이터상의 sequence 길이에 무관하다.</li>
-<li>적은 학습 데이터로도 예측이 가능하다.</li>
-</ol>
-
-<p>두가지 RNN 표현법은 다음과 같이 각자의 용도가 있다.</p>
-
-<ol>
-<li><code>Folded graph (recurrent graph)</code>
-
-<ul>
-<li>간단명료하다.</li>
+<li>Input (매 시점 t 마다), Output (매 시점 t 마다), Hidden (hidden unit간 연결)</li>
+<li>$(x, h), (h, o), (o, L), (L, y), (h^{t-1}, h^t)$  (여기서 (a, b)는 a와 b가 연결됨을 의미)</li>
 </ul></li>
-<li><code>Unfolded graph</code>
+<li>그림 10.4
 
 <ul>
-<li>각 단계에서 계산 수행을 분명하게 기술한다.</li>
-<li>진행 방향에 따라 아이디어를 묘사하기 쉽다.</li>
-<li>정보의 흐름 (Forward): output과 loss의 계산</li>
-<li>정보의 흐름 (Backward): gradient 계산</li>
+<li>Input (매 시점 t 마다), Output (매 시점 t 마다), Hidden-Output (hidden/output unit간 연결)</li>
+<li>$(x, h), (h, o), (o, L), (L, y), (o^{t-1}, h^t)$  (여기서 (a, b)는 a와 b가 연결됨을 의미)</li>
+</ul></li>
+<li>그림 10.5
+
+<ul>
+<li>Input (매 시점 t 마다), Output (최종 시점 $\tau$에만), Hidden (hidden unit간 연결)</li>
+<li>$(x, h), (h^{\tau}, o^{\tau}), (o^\tau, L^\tau), (L^\tau, y^\tau)$ (여기서 (a, b)는 a와 b가 연결됨을 의미)</li>
 </ul></li>
 </ol>
+
+<p>처음 소개된 그림 10.3과 같은 형태는, recurrent neural networks의 가장 대표적인 형태이며, 이번 내용에서 가장 많이 설명될 것이다. 이와 같은 형태는 Turing machine과 같은 계산 과정을 통해 수행된다고 생각하면 된다. 시점 $t$의 갯수 (점근적 선형으로 증가하는) 만큼의 입력을 받아 해당 시점 이후의 출력을 가진다. 이는 근사치가 아닌 정확한 계산 결과이며 이산값으로 나타낸다.</p>
+
+<p>그림 10.3에서 동작하는 forward propagation 수식을 살펴보자. 개념적인 이야기를 다루고 있기 때문에, activation function, loss function, output 형태를 언급하지 않고 있다. 따라서, activation function은 $\tanh$로 두고 output은 discrete 값을 가정한다. 그리고 RNN 모델은 단어나 문자를 예측하는데 사용된다고 가정하자.</p>
+
+<ul>
+<li>output $o$는 각 이산값에 대해 정규화되지 않은 확률 분포로 나타낸다.</li>
+<li>최종 예측값은 $\hat{y}$는 출력 $o$에 대해 softmax()를 적용하여 정규화된 확률 값을 가진다.</li>
+</ul>
+
+<p>Forward propagation은 다음과 같이 동작한다.</p>
+
+<ul>
+<li>Initial state: $h^{(0)}$로 부터 시작.</li>
+<li>Input-to-hidden ($U$)과 hidden-to-hidden ($W$): $a^{(t)} = b + Wh^{(t-1)} + Ux^{(t)}$</li>
+<li>Activation: $h^{(t)} = \tanh(a^{(t)})$</li>
+<li>hidden-to-output ($V$): $o^{(t)} = c + Vh^{(t)}$</li>
+<li>Normailized discrete output: ${\hat{y}}^{(t)} = softmax(o^{(t)})$</li>
+</ul>
+
+<p>이 모델은 입력 sequence와 출력 sequence의 길이가 동일하다. 전체 입,출력 sequence에 대한 loss는 각 시점 (time steps)마다의 loss를 모두 더한 것과 같다.</p>
+
+<p>$ L(${ $x^{(1)}, &hellip;, x^{(\tau)} $}, { $y{(1)}, &hellip;, y^{(\tau)} $}$)$</p>
+
+<p>$= \sum _{t}{L^{(t)}} $</p>
+
+<p>$= -\sum _{t}{\log{p}} _{model} (y^{(t)} | ${ $x^{(1)}, &hellip;, x^{(t)} $}$)$</p>
+
+<p>$L^{(t)} $가 입력 $x^{(1)}, &hellip;, x^{(t)}$이 주어졌을 때, 출력 $y^{(t)}$에 대한 negative log-likelihood라고 하자.
+gradient를 계산하는 과정은 각 시점 (time steps)에 대해 수행된다. 수행 시간은 $O(\tau)$이며, 병렬처리가 불가능하다.
+이 모델은 강력하지만 학습 과정에서 많은 계산량을 요구한다. 이를 <em>back-propagation through time</em> 혹은 <em>BPTT</em> 라고 한다.</p>
+
+<h3 id="10-2-1-teacher-forcing-and-networks-with-output-recurrence">10.2.1 Teacher Forcing and Networks with Output Recurrence</h3>
+
+<p>그림 10.4에서 보여주고 있는 RNN모델은 hidden-to-hidden 연결성이 부족하기 때문에 강력하지 않다. hidden-to-hidden 연결이 없기 때문에, output 유닛이 과거 네트워크의 모든 정보를 가지고 미래를 예측해야한다. 그래서, output 유닛은 명백하게 학습 데이터의 타겟에 대해 학습된다. 사용자는 과거 모든 입력의 기록을 모아둘 필요가 없어진다.</p>
+
+<p>hidden-to-hidden 연결을 제거함으로 얻는 이득은, 시점 $t$에서 예측하는 데 필요한 loss의 계산이 모든 시점 $t$에 대한 관계성이 없어진다. 따라서 학습 단계는 병렬처리 가능하며, 각 시점 $t$에서의 gradient 계산은 독립적으로 수행 가능하다.</p>
+
+<p>output에서 바로 모델이 학습 하는 경우를 teacher forcing 이라고 한다. 이는 maximum likelihood criterion을 따르며, ground truth $\hat(y)^{(t)}$가 $t+1$ 시점의 입력으로 사용된다는 것을 의미한다.</p>
+
+<p>두 시점의 sequence를 예를 들어보면, conditional maximum likelihood criterion은 다음과 같다.</p>
+
+<p>$ \log{p} (y^{(1)}, y^{(2)} | x^{(1)}, x^{(2)})$</p>
+
+<p>$ = \log{p} (y^{(2)} | y^{(1)}, x^{(1)}, x^{(2)})  +  \log{p} (y^{(1)} | x^{(1)}, x^{(2)}) $</p>
 
         </div>
     </article>
@@ -211,11 +218,9 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$</p>
     <nav>
     <ul class="pager">
         
-        <li class="previous"><a href="https://tgjeon.github.io/post/deep_learning_in_a_nut_shell_core_concept/"><span aria-hidden="true">&larr;</span> Deep Learning in a Nutshell: Core Concepts</a></li>
+        <li class="previous"><a href="https://tgjeon.github.io/post/stochastic_gradient_methods/"><span aria-hidden="true">&larr;</span> Stochastic Gradient Methods</a></li>
         
 
-        
-        <li class="next"><a href="https://tgjeon.github.io/post/stochastic_gradient_methods/">Stochastic Gradient Methods <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>
@@ -226,9 +231,9 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$</p>
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'tgjeon';
-    var disqus_identifier = 'https:\/\/tgjeon.github.io\/post\/rnn_unfolding_computational_graph\/';
-    var disqus_title = 'Unfolding Computational Graphs';
-    var disqus_url = 'https:\/\/tgjeon.github.io\/post\/rnn_unfolding_computational_graph\/';
+    var disqus_identifier = 'https:\/\/tgjeon.github.io\/post\/rnn_rnn\/';
+    var disqus_title = 'Recurrent Neural Networks';
+    var disqus_url = 'https:\/\/tgjeon.github.io\/post\/rnn_rnn\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

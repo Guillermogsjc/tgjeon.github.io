@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generator" content="Hugo 0.16" />
     <meta name="author" content="Taegyun Jeon">
     <meta name="description" content="Research Scientist in Machine Learning and Biomedical Engineering">
 
@@ -128,7 +128,7 @@
         <div class="post" itemprop="articleBody">
             
 
-<h1 id="stochastic-gradient-methods-for-large-scale-machine-learning-part-1:d651e37548ed21cc65094b1e7112d7f5">Stochastic Gradient Methods for Large-Scale Machine Learning (Part 1)</h1>
+<h1 id="stochastic-gradient-methods-for-large-scale-machine-learning-part-1">Stochastic Gradient Methods for Large-Scale Machine Learning (Part 1)</h1>
 
 <blockquote>
 <p>Original presentation materials: <a href="http://www.icml.cc/2016/tutorials/part-1.pdf">Part1</a>, <a href="http://www.icml.cc/2016/tutorials/part-2.pdf">Part2</a>, <a href="http://www.icml.cc/2016/tutorials/part-3.pdf">Part3</a> is written by Leon Bottou (Facebook AI Research), Frank E. Curtis (Lehigh University), and Jorge Nocedal (Northwestern University).</p>
@@ -140,7 +140,7 @@
 
 <hr />
 
-<h2 id="튜토리얼의-목표:d651e37548ed21cc65094b1e7112d7f5">튜토리얼의 목표</h2>
+<h2 id="튜토리얼의-목표">튜토리얼의 목표</h2>
 
 <ol>
 <li>Stochastic gradient (SG) 방법에 대해 알아본다.</li>
@@ -150,7 +150,7 @@
 <li>SG를 향상 시키기위해서 어떤 노력들이 있었는가?</li>
 </ol>
 
-<h2 id="튜토리얼의-구성:d651e37548ed21cc65094b1e7112d7f5">튜토리얼의 구성</h2>
+<h2 id="튜토리얼의-구성">튜토리얼의 구성</h2>
 
 <ol>
 <li>Motivation for the stochastic gradient (SG) method</li>
@@ -158,7 +158,7 @@
 <li>Beyond SG</li>
 </ol>
 
-<h3 id="문제-정의-problem-statement:d651e37548ed21cc65094b1e7112d7f5">문제 정의 (Problem statement)</h3>
+<h3 id="문제-정의-problem-statement">문제 정의 (Problem statement)</h3>
 
 <ul>
 <li>학습 데이터가 주어집니다. training set: $ {(x_1, y_1), &hellip;, (x_n, y_n)} $</li>
@@ -192,7 +192,7 @@
 <li>expected risk: $R(w) = E[f(w;x_i)] $</li>
 </ul>
 
-<h3 id="stochastic-gradient-method-vs-batch-gradient-method:d651e37548ed21cc65094b1e7112d7f5">Stochastic Gradient Method vs Batch Gradient Method</h3>
+<h3 id="stochastic-gradient-method-vs-batch-gradient-method">Stochastic Gradient Method vs Batch Gradient Method</h3>
 
 <p>이전에 표현했던 empirical risk minimization을 살펴봅시다.</p>
 
@@ -233,7 +233,7 @@
 
 <p>그럼 왜 stochastic gradient (SG) 기법이 더 탁월하다고 볼 수 있을까요? <strong>여기서 Risk ($R$)를 최적하 하기 위한 stochastic 기법과 batch 기법의 계산량의 상호보완적인 내용을 짚고 넘어가야 합니다.</strong></p>
 
-<h3 id="sg-bg:d651e37548ed21cc65094b1e7112d7f5">SG &gt; BG</h3>
+<h3 id="sg-bg">SG &gt; BG</h3>
 
 <p>stochastic gradient (SG) 기법은 batch 기법보다 더 효율적입니다.</p>
 
@@ -270,7 +270,13 @@
 <li>$ \min _{x \in \Re}\sum _{i=1}^{m} {(a_i x - b_i)}^{2} $</li>
 </ul>
 
-<p>위 예제에서 처럼 혼동되는 구역 (region of confusion)에서 2차식을 임의로 찾아서 목표로 하는 리스크 감소시키는 것은 어려운 문제입니다.</p>
+<p>위 예제에서 처럼 혼동되는 구역 (region of confusion)에서 학습 모델 $w_k$를 가지고, 목표로 하는 리스크 $R_n$를 감소시키는 것은 어려운 문제입니다.</p>
+
+<p>초기에, gradient가 감소세를 보이면, gradient의 분산 (variance)이 혼동되는 구역에서 수렴을 방해합니다.</p>
+
+<ul>
+<li>$E[R<em>n(w</em>{k+1})-R<em>n(w</em>{k})]$ \le - \alpha_k</li>
+</ul>
 
         </div>
     </article>
@@ -281,6 +287,8 @@
         <li class="previous"><a href="https://tgjeon.github.io/post/rnn_unfolding_computational_graph/"><span aria-hidden="true">&larr;</span> Unfolding Computational Graphs</a></li>
         
 
+        
+        <li class="next"><a href="https://tgjeon.github.io/post/rnn_rnn/">Recurrent Neural Networks <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>

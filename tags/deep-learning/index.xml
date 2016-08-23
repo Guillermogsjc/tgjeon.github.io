@@ -7,8 +7,100 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Taegyun Jeon</copyright>
-    <lastBuildDate>Wed, 29 Jun 2016 10:49:16 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jul 2016 05:33:52 +0900</lastBuildDate>
     <atom:link href="https://tgjeon.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Recurrent Neural Networks</title>
+      <link>https://tgjeon.github.io/post/rnn_rnn/</link>
+      <pubDate>Tue, 05 Jul 2016 05:33:52 +0900</pubDate>
+      
+      <guid>https://tgjeon.github.io/post/rnn_rnn/</guid>
+      <description>
+
+&lt;h3 id=&#34;chapter-10-sequence-modeling-recurrent-and-recursive-nets&#34;&gt;Chapter 10. Sequence Modeling: Recurrent and Recursive Nets&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.deeplearningbook.org&#34;&gt;Original book chapter&lt;/a&gt; is written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 포스트는 &amp;ldquo;Deep Learning published by Mit Press (2016)&amp;rdquo; 의 Recurrent Neural Networks에 해당되는 내용을 한글로 정리한 내용입니다. 해당 그림은 저작권 문제로 위 링크를 참고하여 확인하시기 바랍니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;10-2-recurrent-neural-networks-rnns&#34;&gt;10.2 Recurrent Neural Networks (RNNs)&lt;/h3&gt;
+
+&lt;p&gt;앞선 &lt;a href=&#34;https://tgjeon.github.io/post/rnn_unfolding_computational_graph/&#34;&gt;포스트&lt;/a&gt;에서 설명한 그래프 풀기 (graph unrolling)과 파라미터 공유 (parameter sharing)을 통해 다양한 형태의 recurrent neural networks를 디자인 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;Recurrent Neural Networks의 중요한 디자인 패턴들은 다음과 같다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;그림 10.3
+
+&lt;ul&gt;
+&lt;li&gt;Input (매 시점 t 마다), Output (매 시점 t 마다), Hidden (hidden unit간 연결)&lt;/li&gt;
+&lt;li&gt;$(x, h), (h, o), (o, L), (L, y), (h^{t-1}, h^t)$  (여기서 (a, b)는 a와 b가 연결됨을 의미)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;그림 10.4
+
+&lt;ul&gt;
+&lt;li&gt;Input (매 시점 t 마다), Output (매 시점 t 마다), Hidden-Output (hidden/output unit간 연결)&lt;/li&gt;
+&lt;li&gt;$(x, h), (h, o), (o, L), (L, y), (o^{t-1}, h^t)$  (여기서 (a, b)는 a와 b가 연결됨을 의미)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;그림 10.5
+
+&lt;ul&gt;
+&lt;li&gt;Input (매 시점 t 마다), Output (최종 시점 $\tau$에만), Hidden (hidden unit간 연결)&lt;/li&gt;
+&lt;li&gt;$(x, h), (h^{\tau}, o^{\tau}), (o^\tau, L^\tau), (L^\tau, y^\tau)$ (여기서 (a, b)는 a와 b가 연결됨을 의미)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;처음 소개된 그림 10.3과 같은 형태는, recurrent neural networks의 가장 대표적인 형태이며, 이번 내용에서 가장 많이 설명될 것이다. 이와 같은 형태는 Turing machine과 같은 계산 과정을 통해 수행된다고 생각하면 된다. 시점 $t$의 갯수 (점근적 선형으로 증가하는) 만큼의 입력을 받아 해당 시점 이후의 출력을 가진다. 이는 근사치가 아닌 정확한 계산 결과이며 이산값으로 나타낸다.&lt;/p&gt;
+
+&lt;p&gt;그림 10.3에서 동작하는 forward propagation 수식을 살펴보자. 개념적인 이야기를 다루고 있기 때문에, activation function, loss function, output 형태를 언급하지 않고 있다. 따라서, activation function은 $\tanh$로 두고 output은 discrete 값을 가정한다. 그리고 RNN 모델은 단어나 문자를 예측하는데 사용된다고 가정하자.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;output $o$는 각 이산값에 대해 정규화되지 않은 확률 분포로 나타낸다.&lt;/li&gt;
+&lt;li&gt;최종 예측값은 $\hat{y}$는 출력 $o$에 대해 softmax()를 적용하여 정규화된 확률 값을 가진다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Forward propagation은 다음과 같이 동작한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Initial state: $h^{(0)}$로 부터 시작.&lt;/li&gt;
+&lt;li&gt;Input-to-hidden ($U$)과 hidden-to-hidden ($W$): $a^{(t)} = b + Wh^{(t-1)} + Ux^{(t)}$&lt;/li&gt;
+&lt;li&gt;Activation: $h^{(t)} = \tanh(a^{(t)})$&lt;/li&gt;
+&lt;li&gt;hidden-to-output ($V$): $o^{(t)} = c + Vh^{(t)}$&lt;/li&gt;
+&lt;li&gt;Normailized discrete output: ${\hat{y}}^{(t)} = softmax(o^{(t)})$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 모델은 입력 sequence와 출력 sequence의 길이가 동일하다. 전체 입,출력 sequence에 대한 loss는 각 시점 (time steps)마다의 loss를 모두 더한 것과 같다.&lt;/p&gt;
+
+&lt;p&gt;$ L(${ $x^{(1)}, &amp;hellip;, x^{(\tau)} $}, { $y{(1)}, &amp;hellip;, y^{(\tau)} $}$)$&lt;/p&gt;
+
+&lt;p&gt;$= \sum _{t}{L^{(t)}} $&lt;/p&gt;
+
+&lt;p&gt;$= -\sum _{t}{\log{p}} _{model} (y^{(t)} | ${ $x^{(1)}, &amp;hellip;, x^{(t)} $}$)$&lt;/p&gt;
+
+&lt;p&gt;$L^{(t)} $가 입력 $x^{(1)}, &amp;hellip;, x^{(t)}$이 주어졌을 때, 출력 $y^{(t)}$에 대한 negative log-likelihood라고 하자.
+gradient를 계산하는 과정은 각 시점 (time steps)에 대해 수행된다. 수행 시간은 $O(\tau)$이며, 병렬처리가 불가능하다.
+이 모델은 강력하지만 학습 과정에서 많은 계산량을 요구한다. 이를 &lt;em&gt;back-propagation through time&lt;/em&gt; 혹은 &lt;em&gt;BPTT&lt;/em&gt; 라고 한다.&lt;/p&gt;
+
+&lt;h3 id=&#34;10-2-1-teacher-forcing-and-networks-with-output-recurrence&#34;&gt;10.2.1 Teacher Forcing and Networks with Output Recurrence&lt;/h3&gt;
+
+&lt;p&gt;그림 10.4에서 보여주고 있는 RNN모델은 hidden-to-hidden 연결성이 부족하기 때문에 강력하지 않다. hidden-to-hidden 연결이 없기 때문에, output 유닛이 과거 네트워크의 모든 정보를 가지고 미래를 예측해야한다. 그래서, output 유닛은 명백하게 학습 데이터의 타겟에 대해 학습된다. 사용자는 과거 모든 입력의 기록을 모아둘 필요가 없어진다.&lt;/p&gt;
+
+&lt;p&gt;hidden-to-hidden 연결을 제거함으로 얻는 이득은, 시점 $t$에서 예측하는 데 필요한 loss의 계산이 모든 시점 $t$에 대한 관계성이 없어진다. 따라서 학습 단계는 병렬처리 가능하며, 각 시점 $t$에서의 gradient 계산은 독립적으로 수행 가능하다.&lt;/p&gt;
+
+&lt;p&gt;output에서 바로 모델이 학습 하는 경우를 teacher forcing 이라고 한다. 이는 maximum likelihood criterion을 따르며, ground truth $\hat(y)^{(t)}$가 $t+1$ 시점의 입력으로 사용된다는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;두 시점의 sequence를 예를 들어보면, conditional maximum likelihood criterion은 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;$ \log{p} (y^{(1)}, y^{(2)} | x^{(1)}, x^{(2)})$&lt;/p&gt;
+
+&lt;p&gt;$ = \log{p} (y^{(2)} | y^{(1)}, x^{(1)}, x^{(2)})  +  \log{p} (y^{(1)} | x^{(1)}, x^{(2)}) $&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Stochastic Gradient Methods</title>
@@ -18,7 +110,7 @@
       <guid>https://tgjeon.github.io/post/stochastic_gradient_methods/</guid>
       <description>
 
-&lt;h1 id=&#34;stochastic-gradient-methods-for-large-scale-machine-learning-part-1:d651e37548ed21cc65094b1e7112d7f5&#34;&gt;Stochastic Gradient Methods for Large-Scale Machine Learning (Part 1)&lt;/h1&gt;
+&lt;h1 id=&#34;stochastic-gradient-methods-for-large-scale-machine-learning-part-1&#34;&gt;Stochastic Gradient Methods for Large-Scale Machine Learning (Part 1)&lt;/h1&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Original presentation materials: &lt;a href=&#34;http://www.icml.cc/2016/tutorials/part-1.pdf&#34;&gt;Part1&lt;/a&gt;, &lt;a href=&#34;http://www.icml.cc/2016/tutorials/part-2.pdf&#34;&gt;Part2&lt;/a&gt;, &lt;a href=&#34;http://www.icml.cc/2016/tutorials/part-3.pdf&#34;&gt;Part3&lt;/a&gt; is written by Leon Bottou (Facebook AI Research), Frank E. Curtis (Lehigh University), and Jorge Nocedal (Northwestern University).&lt;/p&gt;
@@ -30,7 +122,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;튜토리얼의-목표:d651e37548ed21cc65094b1e7112d7f5&#34;&gt;튜토리얼의 목표&lt;/h2&gt;
+&lt;h2 id=&#34;튜토리얼의-목표&#34;&gt;튜토리얼의 목표&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Stochastic gradient (SG) 방법에 대해 알아본다.&lt;/li&gt;
@@ -40,7 +132,7 @@
 &lt;li&gt;SG를 향상 시키기위해서 어떤 노력들이 있었는가?&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;튜토리얼의-구성:d651e37548ed21cc65094b1e7112d7f5&#34;&gt;튜토리얼의 구성&lt;/h2&gt;
+&lt;h2 id=&#34;튜토리얼의-구성&#34;&gt;튜토리얼의 구성&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Motivation for the stochastic gradient (SG) method&lt;/li&gt;
@@ -48,7 +140,7 @@
 &lt;li&gt;Beyond SG&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;문제-정의-problem-statement:d651e37548ed21cc65094b1e7112d7f5&#34;&gt;문제 정의 (Problem statement)&lt;/h3&gt;
+&lt;h3 id=&#34;문제-정의-problem-statement&#34;&gt;문제 정의 (Problem statement)&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;학습 데이터가 주어집니다. training set: $ {(x_1, y_1), &amp;hellip;, (x_n, y_n)} $&lt;/li&gt;
@@ -82,7 +174,7 @@
 &lt;li&gt;expected risk: $R(w) = E[f(w;x_i)] $&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;stochastic-gradient-method-vs-batch-gradient-method:d651e37548ed21cc65094b1e7112d7f5&#34;&gt;Stochastic Gradient Method vs Batch Gradient Method&lt;/h3&gt;
+&lt;h3 id=&#34;stochastic-gradient-method-vs-batch-gradient-method&#34;&gt;Stochastic Gradient Method vs Batch Gradient Method&lt;/h3&gt;
 
 &lt;p&gt;이전에 표현했던 empirical risk minimization을 살펴봅시다.&lt;/p&gt;
 
@@ -123,7 +215,7 @@
 
 &lt;p&gt;그럼 왜 stochastic gradient (SG) 기법이 더 탁월하다고 볼 수 있을까요? &lt;strong&gt;여기서 Risk ($R$)를 최적하 하기 위한 stochastic 기법과 batch 기법의 계산량의 상호보완적인 내용을 짚고 넘어가야 합니다.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;sg-bg:d651e37548ed21cc65094b1e7112d7f5&#34;&gt;SG &amp;gt; BG&lt;/h3&gt;
+&lt;h3 id=&#34;sg-bg&#34;&gt;SG &amp;gt; BG&lt;/h3&gt;
 
 &lt;p&gt;stochastic gradient (SG) 기법은 batch 기법보다 더 효율적입니다.&lt;/p&gt;
 
@@ -160,7 +252,13 @@
 &lt;li&gt;$ \min _{x \in \Re}\sum _{i=1}^{m} {(a_i x - b_i)}^{2} $&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;위 예제에서 처럼 혼동되는 구역 (region of confusion)에서 2차식을 임의로 찾아서 목표로 하는 리스크 감소시키는 것은 어려운 문제입니다.&lt;/p&gt;
+&lt;p&gt;위 예제에서 처럼 혼동되는 구역 (region of confusion)에서 학습 모델 $w_k$를 가지고, 목표로 하는 리스크 $R_n$를 감소시키는 것은 어려운 문제입니다.&lt;/p&gt;
+
+&lt;p&gt;초기에, gradient가 감소세를 보이면, gradient의 분산 (variance)이 혼동되는 구역에서 수렴을 방해합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$E[R&lt;em&gt;n(w&lt;/em&gt;{k+1})-R&lt;em&gt;n(w&lt;/em&gt;{k})]$ \le - \alpha_k&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -172,7 +270,7 @@
       <guid>https://tgjeon.github.io/post/rnn_unfolding_computational_graph/</guid>
       <description>
 
-&lt;h3 id=&#34;chapter-10-sequence-modeling-recurrent-and-recursive-nets:af5079f711a612e7f7c8a351ea7e20f6&#34;&gt;Chapter 10. Sequence Modeling: Recurrent and Recursive Nets&lt;/h3&gt;
+&lt;h3 id=&#34;chapter-10-sequence-modeling-recurrent-and-recursive-nets&#34;&gt;Chapter 10. Sequence Modeling: Recurrent and Recursive Nets&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.deeplearningbook.org&#34;&gt;Original book chapter&lt;/a&gt; is written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.&lt;/p&gt;
@@ -182,7 +280,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;unfolding-computational-graphs:af5079f711a612e7f7c8a351ea7e20f6&#34;&gt;Unfolding Computational Graphs&lt;/h3&gt;
+&lt;h3 id=&#34;10-1-unfolding-computational-graphs&#34;&gt;10.1 Unfolding Computational Graphs&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Classical Dynamic System&lt;/strong&gt;:
@@ -257,7 +355,7 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$&lt;/p&gt;
       <guid>https://tgjeon.github.io/project/cnn_for_mnist/</guid>
       <description>
 
-&lt;h3 id=&#34;project-information:4e0834f1f8e7b3edf13b26b2607f7c40&#34;&gt;Project Information&lt;/h3&gt;
+&lt;h3 id=&#34;project-information&#34;&gt;Project Information&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -283,7 +381,7 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$&lt;/p&gt;
 
 &lt;p&gt;Detail explanations are on the &lt;a href=&#34;https://tgjeon.github.io/kaggle_MNIST/&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;descriptions:4e0834f1f8e7b3edf13b26b2607f7c40&#34;&gt;Descriptions&lt;/h3&gt;
+&lt;h3 id=&#34;descriptions&#34;&gt;Descriptions&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -312,17 +410,17 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts&#34;&gt;Part 1&lt;/a&gt;에서는 딥 러닝의 중요한 개념에 대해서 소개한다. &lt;a href=&#34;https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training&#34;&gt;Part 2&lt;/a&gt;에서는 딥 러닝의 역사적 배경과 학습 과정, 알고리즘, 실용적인 기법 등을 살펴본다. &lt;a href=&#34;https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-sequence-learning&#34;&gt;Part 3&lt;/a&gt;에서는 자연어 번역을 위한 sequence learning 에 대해 알아본다. recurrent neural networks, LSTMs, encoder-decoder system을 포함한다.&lt;/p&gt;
 
-&lt;h2 id=&#34;core-concepts-핵심-개념:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Core Concepts (핵심 개념)&lt;/h2&gt;
+&lt;h2 id=&#34;core-concepts-핵심-개념&#34;&gt;Core Concepts (핵심 개념)&lt;/h2&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;machine-learning-기계-학습:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Machine Learning (기계 학습)&lt;/h3&gt;
+&lt;h3 id=&#34;machine-learning-기계-학습&#34;&gt;Machine Learning (기계 학습)&lt;/h3&gt;
 
 &lt;p&gt;기계 학습을 통해 우리는 (1) 데이터를 획득하여, (2) 데이터를 통해 모델을 학습하고, (3) 학습된 모델을 이용하여, 새로운 데이터에 대해 예측한다. 모델을 &lt;a href=&#34;http://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training#training&#34;&gt;학습&lt;/a&gt;하는 과정은 새롭고, 익숙치 않은 자료를 하나씩 살펴보고 배움을 얻는 과정과도 같다. 각 단계마다, 모델은 예측을 하고, 얼마나 정확히 예측하였는지에 대해 피드백을 받는다. 이 피드백은 정답으로부터 얼만큼 차이가 나는지 등과 같은 방법을 통해 측정 가능한 오류(error)를 통해, 예측을 더 정확하게 하는데 사용된다.&lt;/p&gt;
 
 &lt;p&gt;학습과정은 종종 파라미터 공간 (parameter space)에서 후진-전진이 반복는 게임이다: 만약 당신이 좋은 예측 결과를 얻기 위해 모델의 파라미터를 수정한다면, 이전에 제대로 예측했던 것도 수정 이후, 틀리게 예측될 수도 있다. 우수한 예측 성능을 가진 모델을 학습한다는 것은 많은 반복 작업이 필요할 것이다. 이런 반복적인 예측-수정의 과정은 예측 결과가 더 이상 발전이 없을 때 까지 반복한다.&lt;/p&gt;
 
-&lt;h3 id=&#34;feature-engineering-특징-공학:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Feature Engineering (특징 공학)&lt;/h3&gt;
+&lt;h3 id=&#34;feature-engineering-특징-공학&#34;&gt;Feature Engineering (특징 공학)&lt;/h3&gt;
 
 &lt;p&gt;특징 공학은 &lt;a href=&#34;https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts/#machine-learning&#34;&gt;기계 학습&lt;/a&gt; 모델로 하여금 데이터들로 부터 클래스들을 쉽게 구분 할 수 있도록 도와주는 유용한 패턴을 추출 하는 것이다. 예를 들어,사진으로 부터 땅과 물고기를 구분하는 것을 초록색과 푸른색 픽셀의 수를 이용한다고 하자. 이런 특징은 기계 학습 모델에 도움이 된다. 좋은 분류를 위해 클래스의 갯수가 제한되어 있기때문에 좋은 분류가 가능하다.&lt;/p&gt;
 
@@ -330,44 +428,44 @@ $$ h^{(t)} = f(h^{ (t-1) }, x^{(t)} ;\theta ) $$&lt;/p&gt;
 
 &lt;p&gt;물체 인식이나 음성 인식과 같은 분야의 영역이 특징 학습을 통해 자동화되고 있지만, 특징 공학은 &lt;a href=&#34;http://blog.kaggle.com/2014/08/01/learning-from-the-best/&#34;&gt;kaggle 기계 학습 대회의 어려운 여러 분야에서 가장 효율적인 방법&lt;/a&gt;으로  여전히 지속 될 것이다.&lt;/p&gt;
 
-&lt;h3 id=&#34;feature-learning-특징-학습:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Feature Learning (특징 학습)&lt;/h3&gt;
+&lt;h3 id=&#34;feature-learning-특징-학습&#34;&gt;Feature Learning (특징 학습)&lt;/h3&gt;
 
 &lt;p&gt;특징 학습 알고리즘은 서로 다른 범주(클래스)의 분류를 위한 가장 중요하며, 공통적으로 나타나는 패턴을 찾는다. 그리고 특징을 자동으로 추출하여 분류나 회귀 문제에 적용된다. 특징 학습은 특징 공학처럼 알고리즘을 통해 자동으로 수행되는 것 처럼 생각된다. 딥러닝에서는 convolutional layer가 예외적으로 이미지에서 좋은 특징을 찾는데 탁월한 능력을 보인다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://devblogs.nvidia.com/parallelforall/wp-content/uploads/2015/11/hierarchical_features.png&#34; alt=&#34;&#34; /&gt;
 Figure 1: 딥 러닝 알고리즘으로 부터 학습된 계층형 특징들.&lt;/p&gt;
 
-&lt;h4 id=&#34;deep-learning-딥-러닝:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Deep Learning (딥 러닝)&lt;/h4&gt;
+&lt;h4 id=&#34;deep-learning-딥-러닝&#34;&gt;Deep Learning (딥 러닝)&lt;/h4&gt;
 
-&lt;h3 id=&#34;fundamental-concepts-기본-개념:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Fundamental Concepts (기본 개념)&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;logistic-regression:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Logistic Regression ()&lt;/h4&gt;
-
-&lt;h4 id=&#34;artificial-neural-network-인공-신경망:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Artificial Neural Network (인공 신경망)&lt;/h4&gt;
-
-&lt;h4 id=&#34;unit:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Unit&lt;/h4&gt;
-
-&lt;h4 id=&#34;artificial-neuron:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Artificial Neuron&lt;/h4&gt;
-
-&lt;h4 id=&#34;activation-function:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Activation Function&lt;/h4&gt;
-
-&lt;h4 id=&#34;layer:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Layer&lt;/h4&gt;
-
-&lt;h3 id=&#34;convolutional-deep-learning:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Convolutional Deep Learning&lt;/h3&gt;
+&lt;h3 id=&#34;fundamental-concepts-기본-개념&#34;&gt;Fundamental Concepts (기본 개념)&lt;/h3&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;convolution:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Convolution&lt;/h4&gt;
+&lt;h4 id=&#34;logistic-regression&#34;&gt;Logistic Regression ()&lt;/h4&gt;
 
-&lt;h4 id=&#34;pooling-subsampling:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Pooling / Subsampling&lt;/h4&gt;
+&lt;h4 id=&#34;artificial-neural-network-인공-신경망&#34;&gt;Artificial Neural Network (인공 신경망)&lt;/h4&gt;
 
-&lt;h4 id=&#34;convolutional-neural-network-cnn:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Convolutional Neural Network (CNN)&lt;/h4&gt;
+&lt;h4 id=&#34;unit&#34;&gt;Unit&lt;/h4&gt;
 
-&lt;h4 id=&#34;inception:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Inception&lt;/h4&gt;
+&lt;h4 id=&#34;artificial-neuron&#34;&gt;Artificial Neuron&lt;/h4&gt;
 
-&lt;h3 id=&#34;conclusion-to-part-1:94c226eaa944803673f4f82b27d8c24f&#34;&gt;Conclusion to Part 1&lt;/h3&gt;
+&lt;h4 id=&#34;activation-function&#34;&gt;Activation Function&lt;/h4&gt;
+
+&lt;h4 id=&#34;layer&#34;&gt;Layer&lt;/h4&gt;
+
+&lt;h3 id=&#34;convolutional-deep-learning&#34;&gt;Convolutional Deep Learning&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;convolution&#34;&gt;Convolution&lt;/h4&gt;
+
+&lt;h4 id=&#34;pooling-subsampling&#34;&gt;Pooling / Subsampling&lt;/h4&gt;
+
+&lt;h4 id=&#34;convolutional-neural-network-cnn&#34;&gt;Convolutional Neural Network (CNN)&lt;/h4&gt;
+
+&lt;h4 id=&#34;inception&#34;&gt;Inception&lt;/h4&gt;
+
+&lt;h3 id=&#34;conclusion-to-part-1&#34;&gt;Conclusion to Part 1&lt;/h3&gt;
 
 &lt;hr /&gt;
 </description>
