@@ -50,7 +50,7 @@
 &lt;p&gt;사용자는 Python/Numpy 배열로부터 직접 데이터를 불러올 수 있습니다. 하지만, &lt;code&gt;tf.SequenceExample&lt;/code&gt;가 더 관심 대상이므로 이것을 사용해보도록 합시다. 이 자료 구조는 비순차적 특징 (non-sequential features)은 &lt;code&gt;&amp;quot;context&amp;quot;&lt;/code&gt;로, 순차적 특징 (sequential features)은 &lt;code&gt;&amp;quot;feature_lists&amp;quot;&lt;/code&gt;로 구성됩니다. 장황하긴 하지만, 이것이 주는 장점은 아래와 같습니다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&amp;rdquo;&amp;ldquo;쉬운 &lt;a href=&#34;https://www.tensorflow.org/versions/r0.10/how_tos/distributed/index.html#distributed-tensorflow&#34;&gt;분산 학습&lt;/a&gt;&amp;rdquo;&amp;rdquo;:&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;쉬운 &lt;a href=&#34;https://www.tensorflow.org/versions/r0.10/how_tos/distributed/index.html#distributed-tensorflow&#34;&gt;분산 학습&lt;/a&gt;&lt;/strong&gt;:&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
