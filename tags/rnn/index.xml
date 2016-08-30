@@ -118,7 +118,7 @@ context_parsed, sequence_parsed = tf.parse_single_sequence_example(
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/dennybritz/tf-rnn/blob/master/batching_padding.ipynb&#34;&gt;Batching and Padding 주피터 노트북을 확인하세요!&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Tensorflow의 RNN 함수는 $[B, T, &amp;hellip;]$ 형태의 tensor를 입력으로 기대합니다. 여기서 $B$는 배치 사이즈, $T$는 각 입력의 시간 길이를 의미합니다. (예. 한 문장의 단어 수). 그리고 마지막 dimension은 사용자의 데이터와 관련있습니다. 문제를 눈치채셨나요? 보편적으로, 하나의 배치에 포함된 모드 sequence들이 길이 $T$와 같지 않다는 것입니다. 하지만 RNN 모델에 입력으로 집어넣어주기 위해서는 길이를 맞춰줘야 합니다. 보통은 padding을 통해 해결합니다: 각 example에 0을 채워 넣어서 sequence의 길이를 같게 맞춰줍니다.&lt;/p&gt;
+&lt;p&gt;Tensorflow의 RNN 함수는 $[B, T, &amp;hellip;]$ 형태의 tensor를 입력으로 기대합니다. 여기서 $B$는 배치 사이즈, $T$는 각 입력의 시간 길이를 의미합니다. (예. 한 문장의 단어 수). 그리고 마지막 dimension은 사용자의 데이터와 관련있습니다. 문제를 눈치채셨나요? 보편적으로, 하나의 배치에 포함된 모든 sequence들이 길이 $T$와 같지 않다는 것입니다. 하지만 RNN 모델에 입력으로 집어넣어주기 위해서는 길이를 맞춰줘야 합니다. 보통은 padding을 통해 해결합니다: 각 example에 0을 채워 넣어서 sequence의 길이를 같게 맞춰줍니다.&lt;/p&gt;
 
 &lt;p&gt;만약, 사용자의 sequence중 하나의 길이가 1000이라고 합시다. 하지만 sequences의 평균 길이가 20이라고 한다면 어떨까요? 만약 모든 example에 대해 길이 1000개에 맞춰서 padding을 하게 되면, 엄청난 공간 (뿐만 아니라 계산 시간)의 낭비가 발생합니다. 바로 여기서 batch padding이 필요합니다. 만약 사용자가 32개의 배치들을 만들었다면, 단지 각 배치에 있는 examples을 같은 크기 (해당 배치의 최대 길이의 example 크기에 맞춰서)로만 padding 시키면 되는 것입니다. 이 방식대로라면, 정말 긴 example은 오직 하나의 배치에만 영향을 미칩니다. 다른 모든 배치의 example 데이터들은 영향에서 벗어날 수 있습니다.&lt;/p&gt;
 
