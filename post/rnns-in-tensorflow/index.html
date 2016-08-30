@@ -320,7 +320,149 @@ batched_data = padding_q.dequeue_many(5)
 
 <p>2개의 example을 가진 배치가 있다고 합시다. example 의 길이는 13이고, 다른 example의 길이는 20입니다. 길이가 13인 example은 0으로 채워져서 (0-padded) 길이가 20이 됩니다. 각각은 128개의 숫자로 된 벡터입니다. 그렇다면 RNN tensor의 모양은 <strong>[2, 20, 128]</strong>입니다. dynamic_rnn 함수는 (outputs, state) 형태의 튜플을 반환합니다. 여기서 <strong>output</strong>은 <strong>[2, 20, &hellip;]</strong> 형태의 tensor 이며, 마지막 차원은 각 시간 스텝의 RNN 결과입니다. <strong>state</strong>는 각 example에 대한 최종 상태이며, tensor 크기는 <strong>[2, &hellip;]</strong>입니다. 마지막 차원의 값은 사용하는 RNN cell에 따라 달라집니다.</p>
 
-<p>여기서 문제가 발생합니다. 시간 스텝 13에 도달 했을 때, 배치의 첫번째 example (총 길이 (20) = 본래 길이 (13) + 0채우기 (7))은 이미 &ldquo;완료&rdquo;된 상태고, 사용자는 더 이상 추가적인 계산이 이루어지길 원하지 않습니다. 두번째 example은 상황이 다르므로 (총 길이 (20) = 본래 길이 (20)), 시간 스텝 20까지 RNN이 계산해야합니다. <strong>sequence_length=[13, 20]</strong>을 전달한다면, 사용자는 Tensorflow에게 첫번째 example은 시간 스텝 13까지만 계산하고,</p>
+<p>여기서 문제가 발생합니다. 시간 스텝 13에 도달 했을 때, 배치의 첫번째 example (총 길이 (20) = 본래 길이 (13) + 0채우기 (7))은 이미 &ldquo;완료&rdquo;된 상태고, 사용자는 더 이상 추가적인 계산이 이루어지길 원하지 않습니다. 두번째 example은 상황이 다르므로 (총 길이 (20) = 본래 길이 (20)), 시간 스텝 20까지 RNN이 계산해야합니다. <strong>sequence_length=[13, 20]</strong>을 전달한다면, 사용자는 Tensorflow에게 첫번째 example은 시간 스텝 13까지만 계산하고, 시간 스텝 13 이후부터는, 각 상태를 복사해서 끝까지 전달만 합니다. 시간 스텝 13 이후의 모든 출력은 0으로 설정 될 것입니다. 이 과정을 통해서 계산 시간을 절약할 수 있습니다. 하지만, 더 중요한 것은 만약 <strong>sequence_length</strong>를 전달하지 않았을 경우, 잘못된 결과를 얻을 수 있습니다. <strong>sequence_length</strong>를 전달하지 않는다면, Tensorflow는 T=13부터 상태를 복사해서 전달하는 것이 아니라, T=20까지 계속 상태를 계산해 나갑니다. 이것은 T=13이후 부터 의도하지 않은 입력인 padding 된 값들을 통해 상태를 계산한다는 뜻입니다.</p>
+
+<pre><code class="language-python"># Create input data
+X = np.random.randn(2, 10, 8)
+ 
+# The second example is of length 6 
+X[1,6:] = 0
+X_lengths = [10, 6]
+ 
+cell = tf.nn.rnn_cell.LSTMCell(num_units=64, state_is_tuple=True)
+ 
+outputs, last_states = tf.nn.dynamic_rnn(
+    cell=cell,
+    dtype=tf.float64,
+    sequence_length=X_lengths,
+    inputs=X)
+ 
+result = tf.contrib.learn.run_n(
+    {&quot;outputs&quot;: outputs, &quot;last_states&quot;: last_states},
+    n=1,
+    feed_dict=None)
+ 
+assert result[0][&quot;outputs&quot;].shape == (2, 10, 64)
+ 
+# Outputs for the second example past past length 6 should be 0
+assert (result[0][&quot;outputs&quot;][1,7,:] == np.zeros(cell.output_size)).all()
+</code></pre>
+
+<h3 id="bidirectional-rnn">Bidirectional RNN</h3>
+
+<p>기본 RNN을 사용하여 예측하고자 할때, 우리는 &ldquo;과거&rdquo;만 고려합니다. 특정한 일에는 맞는 말입니다 (예. 다음 나타날 단어 예상). 하지만 특정 일에 대해서는 과거와 미래 모두를 고려하는 것이 도움이 될 때도 있습니다. 태그를 붙이는 일을 생각해봅시다. 품사 태깅이 대표적이겠죠. 문장의 각 단어들을 품사를 할당하는 일입니다. 우리는 이미 하나의 문장에 나타나는 단어들 모두를 알고 있다고 합시다. 그렇다면 우리는 각 단어에 대해서 왼쪽 단어 (과거) 뿐 아니라, 오른쪽 단어 (미래)도 같이 해당 단어의 품사를 예측하는데 사용하고 싶습니다. Bidirectional RNN이 정확하게 이 목적에 부합합니다. Bidirectional RNN은 두개의 RNN을 결합한 형태입니다. 하나는 &ldquo;왼쪽에서 오른쪽으로&rdquo; 진행하는 것과 &ldquo;오른쪽에서 왼쪽으로&rdquo; 역행하는 것이죠. 이것은 태깅하는데 많이 사용되며, 하나의 시퀀스를 고정 길이 벡터로 끼워넣기 위해 사용됩니다. (이 포스트의 범위를 벗어난 내용입니다.)</p>
+
+<p>기본 RNN처럼, Tensorflow에서는 고정적 (static), 동적 (dynamic)인 버전의 Bidirectional RNN을 제공하고 있습니다. 이 포스트가 작성된 시점 (August 21, 2016)에는 <strong><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn.py">bidirectional_dynamic_rnn</a></strong>가 아직 문서화되진 않았지만, 고정적 (static) <code>bidrectional_rnn</code>을 쓰는 것보단 더 좋습니다.</p>
+
+<p>Bidirectional RNN의 가장 큰 차이점은 정방향 (forward)과 역방향 (backward)에 대해 각기 분리된 다른 cell을 인자로 취합니다. 그리고 반환값인 outputs과 states도 마찬가지로, 정방향과 역방향에 대한 반환값을 각각 가지게 됩니다.</p>
+
+<pre><code class="language-python">X = np.random.randn(2, 10, 8)
+ 
+X[1,6,:] = 0
+X_lengths = [10, 6]
+ 
+cell = tf.nn.rnn_cell.LSTMCell(num_units=64, state_is_tuple=True)
+ 
+outputs, states  = tf.nn.bidirectional_dynamic_rnn(
+    cell_fw=cell,
+    cell_bw=cell,
+     dtype=tf.float64,
+    sequence_length=X_lengths,
+    inputs=X)
+ 
+output_fw, output_bw = outputs
+states_fw, states_bw = states
+</code></pre>
+
+<h3 id="rnn-cells-wrappers-multi-layer-rnns">RNN Cells, Wrappers, Multi-layer RNNs</h3>
+
+<p><strong><a href="https://github.com/dennybritz/tf-rnn/blob/master/rnn_cell_wrappers.py.ipynb">RNN Cell 주피터 노트북을 확인하세요!</a></strong></p>
+
+<p>모든 Tensorflow의 RNN 함수들은 <strong>Cell</strong>을 인자로 받습니다. LSTMs과 GRUs가 가장 많이 사용되는 cells입니다. 물론 다른 종류도 있지만, 모두 문서화되진 않았습니다. 현재 어떤 cell들이 사용가능한지 확인할 수 있는 최선의 방법은 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell.py">rnn_cell.py</a>와 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/rnn/python/ops/rnn_cell.py">contrib/rnn_cell</a>을 살펴보는 것입니다.</p>
+
+<p>이 포스트가 작성된 시점에서, 기본적인 RNN cell과 wrapper는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>BasicRNNCell</strong>: 기본적인 RNN cell.</li>
+<li><strong>GRUCell</strong>: <a href="http://arxiv.org/abs/1406.1078">Gated Recurrent Unit</a> cell.</li>
+<li><strong>BasicLSTMCell</strong>: <a href="http://arxiv.org/abs/1409.2329">Recurrent Neural Network Regularization</a> 논문 기반 LSTM cell입니다. peephole 연결과 cell clipping 기능이 없습니다.</li>
+<li><strong>LSTMCell</strong>: 더 복잡한 LSTM cell입니다. peephole연결과 cell clipping기능이 옵션으로 선택 가능합니다.</li>
+<li><strong>MultiRNNCell</strong>: 여러개의 RNN cell을 연결하여, Multi-layer cell로 구성해주는 wrapper입니다.</li>
+<li><strong>DropoutWrapper</strong>: RNN cell의 입력과 출력 연결에 대해 dropout 기능을 추가해주는 wrapper입니다.</li>
+</ul>
+
+<p>Contributed RNN cell과 wrapper는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>CoupledInputForgetGateLSTMCell</strong>: 확장된 <strong>LSTMCell</strong>인 CoupledInputForgetGate (CIFG) cell입니다. <a href="http://arxiv.org/abs/1503.04069">LSTM: A Search Space Odyssey</a>를 기반으로 합니다.</li>
+<li>TimeFreqLSTMCell: Time-Frequency LSTM Cell 입니다. <a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45401.pdf">Modeling Time-Frequency Patterns with LSTM vs. Convolutional Architectures for LVCSR Tasks</a> 논문을 기반으로 합니다.</li>
+<li><strong>GridLSTMCell</strong>: <a href="http://arxiv.org/abs/1507.01526">Grid Long Short-Term Memory</a> 논문을 기반으로 합니다.</li>
+<li><strong>AttentionCellWrapper</strong>: 기존 RNN cell에 Attention기능을 추가합니다. <a href="https://arxiv.org/abs/1601.06733">Long Short-Term Memory-Networks for Machine Reading</a> 논문을 기반으로 합니다.</li>
+<li><strong>LSTMBlockCell</strong>: 기본 LSTM cell의 빠른 버전입니다. (<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/rnn/python/ops/lstm_ops.py">lstm_ops.py</a>에 위치합니다.)</li>
+</ul>
+
+<p>RNN cell과 wrapper는 아래와 같이 간단히 사용할 수 있습니다.</p>
+
+<pre><code class="language-python">cell = tf.nn.rnn_cell.LSTMCell(num_units=64, state_is_tuple=True)
+cell = tf.nn.rnn_cell.DropoutWrapper(cell=cell, output_keep_prob=0.5)
+cell = tf.nn.rnn_cell.MultiRNNCell(cells=[cell] * 4, state_is_tuple=True)
+</code></pre>
+
+<h3 id="padded-example에-대해-sequence-loss-계산하기">Padded example에 대해 Sequence loss 계산하기</h3>
+
+<p><strong><a href="https://github.com/dennybritz/tf-rnn/blob/master/loss_masking.py.ipynb">Loss 계산에 대한 주피터 노트북을 확인하세요!</a></strong></p>
+
+<p>Sequence 예측에 대해서, 각 타임 스텝마다 예측하길 원할 때가 있습니다. 예를 들어, 언어 모델링에서 한 문장에서 나타나는 각 단어들에 대해 다음 나타날 단어를 예측하고자 합니다. 만약 모든 sequence가 동일한 길이라면, Tensorflow의 <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/seq2seq.py">sequence_loss와 sequence_loss_by_example</a>를 사용하여 cross-entropy loss를 계산할 수 있습니다.</p>
+
+<p>그러나, 현재 <code>sequence_loss</code>는 dynamic_rnn으로 부터 얻어지는 가변 길이 sequence에 대해 지원하지 않습니다. padding을 통해 sequence길이를 맞춴뒤, 각 타임 스텝마다 그리고 padded 위치에서 loss를 계산한 다는 것은 무의미합니다. 해결책은 padded된 위치에 대해 마스킹 처리하는 가중치 행렬을 만드는겁니다.</p>
+
+<p>아래에서 0-class를 사용할 경우, 왜 0-padding이 문제가 되는지 볼 수 있습니다. 만약 마스크를 만들기 위해 <strong>tf.sign(tf.to_float(y))</strong>을 사용할 때, &ldquo;0-class&rdquo;도 마스킹 처리되서 없어져버리는 경우가 발생합니다. 이를 방지하기 위해 sequence 길이 정보를 이용해 마스크를 만들수도 있지만, 훨씬 더 복잡해집니다.</p>
+
+<pre><code class="language-python"># Batch size
+B = 4
+# (Maximum) number of time steps in this batch
+T = 8
+RNN_DIM = 128
+NUM_CLASSES = 10
+ 
+# The *acutal* length of the examples
+example_len = [1, 2, 3, 8]
+ 
+# The classes of the examples at each step (between 1 and 9, 0 means padding)
+y = np.random.randint(1, 10, [B, T])
+for i, length in enumerate(example_len):
+    y[i, length:] = 0  
+     
+# The RNN outputs
+rnn_outputs = tf.convert_to_tensor(np.random.randn(B, T, RNN_DIM), dtype=tf.float32)
+ 
+# Output layer weights
+W = tf.get_variable(
+    name=&quot;W&quot;,
+    initializer=tf.random_normal_initializer(),
+    shape=[RNN_DIM, NUM_CLASSES])
+ 
+# Calculate logits and probs
+# Reshape so we can calculate them all at once
+rnn_outputs_flat = tf.reshape(rnn_outputs, [-1, RNN_DIM])
+logits_flat = tf.batch_matmul(rnn_outputs_flat, W)
+probs_flat = tf.nn.softmax(logits_flat)
+ 
+# Calculate the losses 
+y_flat =  tf.reshape(y, [-1])
+losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits_flat, y_flat)
+ 
+# Mask the losses
+mask = tf.sign(tf.to_float(y_flat))
+masked_losses = mask * losses
+ 
+# Bring back to [B, T] shape
+masked_losses = tf.reshape(masked_losses,  tf.shape(y))
+ 
+# Calculate mean loss
+mean_loss_by_example = tf.reduce_sum(masked_losses, reduction_indices=1) / example_len
+mean_loss = tf.reduce_mean(mean_loss_by_example)
+</code></pre>
 
         </div>
     </article>
